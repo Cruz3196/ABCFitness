@@ -23,16 +23,21 @@
   </head>
   <body>
     <!-- NAV SECTION  -->
-    <nav class="navbar sticky-top navbar-dark bg-dark navbar-expand-lg w-100" >
-      <div class="container-fluid px-4">
-        <a 
-          class="navbar-brand" 
-          href="/"
-          >
-          <h2 class="company-name">
-            ABC Fitness
-          </h2>
+    <nav class="navbar sticky-top navbar-dark bg-dark navbar-expand-lg w-100 position-relative">
+      <div class="container-fluid px-4 d-flex justify-content-between align-items-center w-100">
+        
+        <!-- Left side of navbar -->
+        <a class="navbar-brand" href="/">
+          <h2 class="company-name">ABC Fitness</h2>
         </a>
+    
+        <!-- Centered Logo -->
+        <a class="navbar-logo position-absolute top-50 start-50 translate-middle" href="#">
+        <!-- position absolute top-to start-50 translate-middle: centers the logo in the navbar -->
+          <img src="/assets/FitnessLogo.png" alt="Logo" width="70" height="60" class="d-inline-block align-text-top">
+        </a>
+    
+        <!-- Right side toggle -->
         <button
           class="navbar-toggler"
           type="button"
@@ -43,39 +48,31 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+    
+        <!-- Offcanvas Menu -->
         <div 
-          class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" 
-          id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel"
+          class="offcanvas offcanvas-end text-bg-dark" 
+          tabindex="-1" 
+          id="offcanvasDarkNavbar" 
+          aria-labelledby="offcanvasDarkNavbarLabel"
         >
-          
-          <!-- Off Canvas Header  -->
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
-              ABC Fitness
-            </h5>
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">ABC Fitness</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-
-          <!-- Off Canvas Items  -->
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/About.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/Gallery.html">Gallery</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/Contact.html">Contact Us</a>
-              </li>
+              <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="/About.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="/Gallery.html">Gallery</a></li>
+              <li class="nav-item"><a class="nav-link" href="/Contact.html">Contact Us</a></li>
             </ul>
           </div>
         </div>
+    
       </div>
     </nav>
+    
 
     <main>
       <!-- HERO SECTION  -->
