@@ -37,7 +37,6 @@
     font-size: 3rem;
     font-weight: 800;
   }
-
   p{
     font-size: 1.25rem;
   }
@@ -79,6 +78,9 @@
   }
     
   .img-hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 100%;
     height: auto;
   }
@@ -676,6 +678,10 @@
     .hero-Section {
       height: 780px;
     }
+    .hero-content{
+      height: 228px;
+      padding-top: 70px;
+    }
     .img-hero-section {
       max-width: 100%;
       height: auto;
@@ -855,4 +861,3 @@
       margin-right: 14px;
     }
   }
-  
