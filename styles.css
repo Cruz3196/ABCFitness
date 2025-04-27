@@ -1,0 +1,852 @@
+/* =================== Reset & Base Styles =================== */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif !important;
+    overflow-x: hidden;
+  }
+  
+  /* =================== Button Styles =================== */
+  
+  button.Form-button {
+    border-radius: 20px;
+    height: 50px;
+  }
+  button.Hero-button{
+    border-radius: 20px;
+    height: 50px;
+  }
+  button.Contact-button{
+    border-radius: 20px;
+    height: 50px;
+  }
+  
+  /* =================== Container fixes =================== */
+  
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* =================== Font Styles ======================= */
+
+  
+  p{
+    font-size: 1.25rem;
+  }
+
+  /* =================== Image Container =================== */
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* =================== Navbar =================== */
+  nav {
+    height: 90px;
+    width: 100%;
+  }
+  
+  .navbar-collapse {
+    background-color: #fff;
+    z-index: 9999;
+  }
+
+  .company-name{
+    color: #c5c3c3
+  }
+  
+  /* ======================================================================================== */
+  /* ====================================== HOME PAGE ====================================== */
+  /* ======================================================================================== */
+  
+  /* =================== Hero Section =================== */
+  .hero-Section {
+    padding: 20px 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f9f9f9;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .img-hero-section {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* =================== Card Section =================== */
+  .card-section {
+    padding: 40px 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .Card-Title-Container {
+    height: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card-img-top {
+    max-width: 100%;
+    height: auto;
+    padding: 40px;
+  }
+  
+  .Card-Title {
+    text-transform: capitalize;
+    text-align: center;
+  }
+  
+  .product-card {
+    padding: 20px;
+  }
+  
+  .card {
+    width: 100%;
+  }
+  
+  /* =================== Form Section =================== */
+  .Form-Section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0;
+  }
+  
+  .Form-card {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .Form-Intouch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+  /* Form - title  */
+  .Form-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-weight: 800;
+    padding-bottom: 20px;
+  }
+  .Form-subtitle {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Form-Input {
+    margin-top: 16px;
+    height: 50px;
+    border-radius: 12px;
+  }
+  
+  /* =================== Testimonial Section  =================== */
+  .testimonial-card {
+    height: 100%;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .avatar-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .avatar-icon {
+    color: #6c757d;
+    font-size: 1.5rem;
+  }
+  
+  .testimonial-content {
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+  
+  .customer-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .customer-title {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  .navigation-arrows {
+    margin-top: 30px;
+  }
+  
+  .nav-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-arrow:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .testimonial-section {
+    padding: 80px 0;
+  }
+  
+  .section-heading {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .pagination-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #333;
+  }
+  
+  /* ======================================================================================== */
+  /* ====================================== ABOUT PAGE ====================================== */
+  /* ======================================================================================== */
+  
+  /* About title  */
+  .about-section {
+    padding: 20px 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    height: 130px;
+  }
+  .about-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3.125rem;
+    text-transform: capitalize;
+  }
+  
+  /* SUB HERO STORY SECTION */
+  .sub-hero-section {
+    padding: 20px 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  .image-sub {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .story-title-section {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .story-title {
+    text-transform: capitalize;
+  }
+  
+  .story-text {
+    line-height: 2.5;
+  }
+  
+  /* Mission Section  */
+  
+  .mission-section {
+    background-color: #f9f9f9;
+    padding: 20px 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  .mission-title-section {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .mission-title {
+    text-transform: capitalize;
+  }
+  
+  .mission-text {
+    line-height: 2.5;
+  }
+  
+  .image-mission {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Reviews Section  */
+  .customer-review-section {
+    padding: 20px 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  .reviews-title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .gym-rating-header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .gym-rating-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  .gym-ratings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .star-rating {
+    font-size: 1.875rem;
+  }
+  
+  .review-stats {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+  }
+  
+  .gym-description-text {
+    letter-spacing: 2px;
+    padding-left: 20px;
+  }
+  .fa {
+    font-size: 1.5625rem;
+  }
+  
+  .checked {
+    color: orange;
+  }
+  
+  /* Three column layout */
+  .side {
+    float: left;
+    width: 15%;
+    margin-top: 10px;
+  }
+  
+  .middle {
+    float: left;
+    width: 70%;
+    margin-top: 10px;
+  }
+  
+  /* Place text to the right */
+  .right {
+    text-align: right;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  /* The bar container */
+  .bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Individual bars */
+  .bar-5 {
+    width: 60%;
+    height: 18px;
+    background-color: #bdbdbd;
+  }
+  .bar-4 {
+    width: 30%;
+    height: 18px;
+    background-color: #bdbdbd;
+  }
+  .bar-3 {
+    width: 10%;
+    height: 18px;
+    background-color: #e0e0e0;
+  }
+  .bar-2 {
+    width: 4%;
+    height: 18px;
+    background-color: #e0e0e0;
+  }
+  .bar-1 {
+    width: 15%;
+    height: 18px;
+    background-color: #bdbdbd;
+  }
+  
+  /* Testimonials About Section  */
+  .about-testimonials {
+    padding: 20px 0;
+    width: 100%;
+    overflow: hidden;
+    height: 900px;
+  }
+  .about-testimonials-title {
+    display: flex;
+    justify-content: center;
+  }
+  .about-testimonials-text {
+    padding: 30px;
+    text-transform: capitalize;
+  }
+  
+  .about-testimonials-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .about-testimonials-cards .card {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Text for card  */
+  .testimonial-rating-card {
+    padding-top: 10x;
+    padding-bottom: 10px;
+  }
+  
+
+  
+  .testimonial-card-img {
+    max-width: 100%;
+    height: auto;
+    padding: 120px;
+  }
+  
+  /* ======================================================================================== */
+  /* ====================================== Gallery Page ==================================== */
+  /* ======================================================================================== */
+  .gallery-title-section {
+    padding: 20px 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  .gallery-text-title {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .gallery-subtitle {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+
+    font-weight: 200;
+  }
+  
+  /* ======================================================================================== */
+  /* ====================================== Contact Page ==================================== */
+  /* ======================================================================================== */
+  .contact-title-section {
+    padding: 20px 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  .contact-title {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .contact-subtitle {
+    padding-top: 20px;
+    font-weight: 200;
+  }
+  
+  .contact-form-section {
+    height: 450px;
+  }
+  
+  /* ======================================================================================== */
+  /* ====================================== Footer Section ================================== */
+  /* ======================================================================================== */
+  /* Footer Section  */
+  .Footer-Section {
+    padding: 40px 0;
+    max-width: 100%;
+    overflow: hidden;
+    background-color: #f9f9f9;
+  }
+  
+  /* Footer Header Container */
+  .Footer-heading-container {
+    max-width: 100%;
+  }
+  
+  .Footer-title {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    padding-top: 20px;
+  }
+  
+  /* Footer list titles  */
+  .footer-list-title {
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  .footer-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    list-style-type: none;
+  }
+  
+  .footer-list li {
+    margin-bottom: 30px;
+  }
+  
+  /* Footer Icons  */
+  .footer-list svg {
+    width: 26px;
+    height: 26px;
+    margin-right: 14px;
+  }
+  
+  .footer-list svg:hover {
+    fill: #0d6efd;
+    transition: all 0.3s ease;
+  }
+  
+  /* App Download Icons */
+  .store-badges-apple img {
+    height: 60px;
+    transition: transform 0.2s ease;
+    margin-bottom: 15px;
+  }
+  
+  .store-badge-google img {
+    height: 53.7px;
+    transition: transform 0.2s ease;
+  }
+  
+  /* Footer Footer  */
+  .footer-language menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    list-style-type: none;
+  }
+  .footer-button {
+    margin-bottom: 1px;
+  }
+  .footer-copyright-text {
+    color: #bbbcb6;
+    padding-top: 20px;
+  }
+  /* ======================================================================================== */
+  /* ================================ Responsive Layouts ==================================== */
+  /* ======================================================================================== */
+  @media (min-width: 342px) {
+    /* Hero Section  */
+    .hero-Section {
+      height: 680px;
+    }
+    .hero-content {
+      height: 228px;
+      padding-top: 50px;
+    }
+    .img-hero-section {
+      max-width: 100%;
+      height: auto;
+      padding: 30px;
+    }
+    /* ======================================================================================== */
+    /* ====================================== ABOUT PAGE ====================================== */
+    /* ======================================================================================== */
+  
+    /* <!-- SUB HERO STORY SECTION  --> */
+    .image-sub {
+      max-width: 100%;
+      height: auto;
+      padding: 30px;
+    }
+  
+    /* Mission Section  */
+    .image-mission {
+      max-width: 100%;
+      height: auto;
+      padding: 30px;
+    }
+  
+    /* footer section  */
+    .Footer-title {
+      padding-left: 60px;
+    }
+    .footer-card-container {
+      padding-left: 60px;
+      padding-right: 10px;
+    }
+    .footer-list {
+      overflow-wrap: break-word;
+      padding-left: 0px;
+    }
+    .footer-list svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    /* Hero Section  */
+    .hero-Section {
+      height: 780px;
+    }
+    .img-hero-section {
+      max-width: 100%;
+      height: auto;
+      padding: 70px;
+    }
+  
+    /* ======================================================================================== */
+    /* ====================================== ABOUT PAGE ====================================== */
+    /* ======================================================================================== */
+  
+    /* <!-- SUB HERO STORY SECTION  --> */
+    .image-sub {
+      max-width: 100%;
+      height: auto;
+      padding: 70px;
+    }
+    /* Mission Section  */
+    .image-mission {
+      max-width: 100%;
+      height: auto;
+      padding: 70px;
+    }
+    /* Gym Section Rating  */
+    .gym-rating-section {
+      display: flex;
+      flex-direction: column;
+    }
+    .review-stats {
+      display: flex;
+      justify-content: space-between;
+    }
+    /* Testimonial About Section  */
+    .testimonial-card-img {
+      max-width: 100%;
+      height: auto;
+      padding: 180px;
+    }
+    .about-testimonials {
+      height: 1050px;
+    }
+    /* Footer Section */
+    .Footer-title {
+      padding-left: 70px;
+    }
+    .footer-card-container {
+      padding-left: 70px;
+    }
+    .footer-list {
+      overflow-wrap: break-word;
+      padding-left: 0px;
+    }
+    .footer-list svg {
+      width: 26px;
+      height: 26px;
+      margin-right: 14px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    /* Hero Section  */
+    .hero-Section {
+      height: 670px;
+    }
+    .hero-content {
+      padding-top: 250px;
+      height: 250px;
+    }
+    .img-hero-section {
+      max-width: 100%;
+      height: auto;
+      margin-top: 80px;
+      margin-bottom: 70px;
+      padding: 1px;
+    }
+  
+    /* ======================================================================================== */
+    /* ====================================== ABOUT PAGE ====================================== */
+    /* ======================================================================================== */
+  
+    /* <!-- SUB HERO STORY SECTION  --> */
+    .image-sub {
+      max-width: 100%;
+      height: auto;
+      margin-top: 80px;
+      margin-bottom: 70px;
+      padding: 1px;
+    }
+    .closing-story-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Mission Section  */
+    .image-mission {
+      max-width: 100%;
+      height: auto;
+      margin-top: 80px;
+      margin-bottom: 70px;
+      padding: 1px;
+    }
+    .our-mission-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Gym Section Rating  */
+    .gym-rating-section {
+      display: flex;
+      flex-direction: row;
+    }
+    .gym-ratings {
+      display: flex;
+      justify-content: center;
+    }
+    .gym-description-text {
+      letter-spacing: 2px;
+      padding-left: 0;
+    }
+    .review-stats {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 0;
+    }
+  
+    /* Testimonial about section  */
+    .about-testimonials {
+      height: 840px;
+    }
+    .about-testimonials-cards {
+      display: flex;
+      flex-direction: row;
+    }
+    .testimonial-card-img {
+      padding: 100px;
+    }
+    /* Form Section  */
+    .Form-Input {
+      height: 40px;
+    }
+    /* Gallery Section Title */
+    .gallery-text-title {
+      display: flex;
+      justify-content: center;
+    }
+    .gallery-subtitle {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    /* Contact Section  */
+    .contact-title {
+      display: flex;
+    }
+    .contact-subtitle {
+      padding-top: 20px;
+
+      font-weight: 200;
+    }
+    .contact-form-section {
+      display: flex;
+      flex-direction: column;
+      padding-top: 65px;
+    }
+  
+    /* Footer Section  */
+    .footer-list svg {
+      width: 26px;
+      height: 26px;
+      margin-right: 14px;
+    }
+  }
+  
