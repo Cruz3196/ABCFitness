@@ -80,8 +80,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    object-fit: contain;
+    padding: 15px;
+    box-sizing: border-box;
   }
   
   /* =================== Card Section =================== */
@@ -631,8 +634,6 @@
       padding-top: 50px;
     }
     .img-hero-section {
-      max-width: 100%;
-      height: auto;
       padding: 30px;
     }
     /* ======================================================================================== */
@@ -682,9 +683,7 @@
       padding-top: 70px;
     }
     .img-hero-section {
-      max-width: 100%;
-      height: auto;
-      padding: 70px;
+      padding: 30px;
     }
   
     /* ======================================================================================== */
@@ -754,11 +753,10 @@
       text-align: start;
     }
     .img-hero-section {
-      max-width: 100%;
-      height: auto;
       margin-top: 80px;
       margin-bottom: 70px;
       padding: 1px;
+  
     }
   
     /* ======================================================================================== */
