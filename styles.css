@@ -23,6 +23,10 @@
     border-radius: 20px;
     height: 50px;
   }
+
+  button.service-button{
+    border-radius: 20px;
+  }
   
   /* =================== Container fixes =================== */
   
@@ -59,15 +63,192 @@
   /* ====================================== HOME PAGE ====================================== */
   /* ======================================================================================== */
   
-  /* =================== Hero Section =================== */
-  .hero-Section {
+  .hero-section {
     padding: 20px 0;
     width: 100%;
     overflow: hidden;
-    background-color: #f9f9f9;
+    background: linear-gradient(135deg, #f9f9f9 0%, #e6f7ff 100%);
+    position: relative;
   }
-  .carousel-item {
-    height: 100%; 
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/pattern-bg.png');
+    opacity: 0.05;
+    z-index: 0;
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #333;
+    position: relative;
+  }
+
+  .hero-title .highlight {
+    color: #0275d8;
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: rgba(2, 117, 216, 0.2);
+    z-index: -1;
+    border-radius: 4px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 25px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background-color: #0275d8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(2, 117, 216, 0.3);
+    display: inline-block;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: #0275d8;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #0275d8;
+    display: inline-block;
+  }
+
+  .hero-features {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .feature-icon {
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .certified-icon {
+    background-image: url('/assets/icons/certified.svg');
+  }
+
+  .equipment-icon {
+    background-image: url('/assets/icons/equipment.svg');
+  }
+
+  .community-icon {
+    background-image: url('/assets/icons/community.svg');
+  }
+
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .img-hero-section {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 15px;
+  }
+
+  .promo-badge {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: rotate(5deg);
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+    animation: pulse 2s infinite;
+  }
+
+  .promo-text {
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  .promo-highlight {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin: 3px 0;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: rotate(5deg) scale(1);
+    }
+    50% {
+      transform: rotate(5deg) scale(1.05);
+    }
+    100% {
+      transform: rotate(5deg) scale(1);
+    }
   }
   /* =================== Card Section =================== */
   .card-section {
@@ -605,39 +786,57 @@
   /* ================================ Responsive Layouts ==================================== */
   /* ======================================================================================== */
   @media (min-width: 342px) {
-    /* Hero Section  */
-    .hero-Section {
+      /* Hero Section  */
+    .hero-section {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 780px;
+      height: auto;
+      padding: 30px 0;
     }
-    .hero-conatiner{
-      margin-bottom: 50px;
-    }
+
     .hero-content {
+      order: 2;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      height: 390px;
+      padding: 20px 15px;
     }
-    .hero-image-content{
+
+    .hero-image-content {
+      order: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      height: 390px;
+      margin-top: 20px;
     }
-    .img-hero-section{
-      height: 120vh;
-      width: 90vw;
-      object-fit: cover;
-      margin-bottom: 50px;
+
+    .img-hero-section {
+      height: 300px;
       border-radius: 20px;
     }
+
+    .hero-subtitle {
+      max-width: 100%;
+    }
+
+    .hero-cta {
+      justify-content: center;
+    }
+
+    .hero-features {
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .promo-badge {
+      transform: rotate(5deg) scale(0.8);
+    }
+  }
 
     /* classes Section  */
     .Card-Title h1{
@@ -646,9 +845,9 @@
       font-size: 2.5rem;
       font-weight: 600;
     }
-    /* ======================================================================================== */
-    /* ====================================== ABOUT PAGE ====================================== */
-    /* ======================================================================================== */
+/* ======================================================================================== */
+/* ====================================== ABOUT PAGE ====================================== */
+/* ======================================================================================== */
   
     /* <!-- SUB HERO STORY SECTION  --> */
     .image-sub {
@@ -681,43 +880,52 @@
       height: 20px;
       margin-right: 6px;
     }
-  }
   
   @media (min-width: 769px) {
     /* Hero Section  */
-    .hero-Section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 780px;
-    }
-    .hero-conatiner{
-      margin-bottom: 50px;
+    .hero-section {
+      height: auto;
+      padding: 40px 0;
     }
     .hero-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: 390px;
+      order: 2;
+      padding: 30px 20px;
     }
-    .hero-image-content{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: 390px;
+    .hero-title {
+      font-size: 2.8rem;
+      margin-bottom: 25px;
     }
-    .img-hero-section{
-      height: 120vh;
-      width: 90vw;
-      object-fit: cover;
-      margin-bottom: 50px;
-      border-radius: 20px;
+    .hero-subtitle {
+      font-size: 1.05rem;
+      margin-bottom: 30px;
     }
-
+    .hero-image-content {
+      order: 1;
+      margin-top: 30px;
+    }
+    .img-hero-section {
+      height: 400px;
+    }
+    .btn-primary, .btn-secondary {
+      padding: 12px 25px;
+    }
+    .feature-item {
+      font-size: 1rem;
+    }
+    .feature-icon {
+      width: 18px;
+      height: 18px;
+    }
+    .promo-badge {
+      padding: 12px 18px;
+      transform: rotate(5deg) scale(0.9);
+    }
+    .promo-text {
+      font-size: 0.75rem;
+    }
+    .promo-highlight {
+      font-size: 1.4rem;
+    }
     /* classes Section  */
     .Card-Title h1{
       text-transform: capitalize;
@@ -779,51 +987,49 @@
   
   @media (min-width: 992px) {
     /* Hero Section  */
-    .hero-Section {
-      height: 670px;
-    }
-    .hero-container{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;  
-      align-items: center;
-      height: 670px;
-      margin-bottom: 0;
+    .hero-section {
+      height: auto;
+      padding: 40px 0;
     }
     .hero-content {
-      height: 335px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: start;
-      text-align: start;
+      order: 1;
+      padding: 30px 20px;
     }
-    .hero-Section h1{
-      font-size: 4rem;
-      margin-bottom: 80px;
-      font-weight: 800;
+    .hero-title {
+      font-size: 2.8rem;
+      margin-bottom: 25px;
     }
-    .hero-Section p{
-      margin-bottom: 90px;
-      text-wrap: wrap;
+    .hero-subtitle {
+      font-size: 1.05rem;
+      margin-bottom: 30px;
     }
-    .hero-image-content{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: 435px;
-      width: 350px;
+    .hero-image-content {
+      order: 2;
+      margin-top: 30px;
     }
-    .img-hero-section{
-      height: 140vh;
-      width: 45vw;
-      margin: 0;
-      object-fit: fill;
-      border-radius: 20px;
+    .img-hero-section {
+      height: 400px;
     }
-
+    .btn-primary, .btn-secondary {
+      padding: 12px 25px;
+    }
+    .feature-item {
+      font-size: 1rem;
+    }
+    .feature-icon {
+      width: 18px;
+      height: 18px;
+    }
+    .promo-badge {
+      padding: 12px 18px;
+      transform: rotate(5deg) scale(0.9);
+    }
+    .promo-text {
+      font-size: 0.75rem;
+    }
+    .promo-highlight {
+      font-size: 1.4rem;
+    }
     /* classes Section  */
     .Card-Title h1{
       text-transform: capitalize;
@@ -831,7 +1037,6 @@
       font-size: 3.5rem;
       font-weight: 600;
     }
-  
     /* ======================================================================================== */
     /* ====================================== ABOUT PAGE ====================================== */
     /* ======================================================================================== */
