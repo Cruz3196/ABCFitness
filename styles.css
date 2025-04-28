@@ -41,15 +41,6 @@
     font-size: 1.25rem;
   }
 
-  /* =================== Image Container =================== */
-  
-  .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
   /* =================== Navbar =================== */
   nav {
     height: 90px;
@@ -75,18 +66,9 @@
     overflow: hidden;
     background-color: #f9f9f9;
   }
-    
-  .img-hero-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    padding: 15px;
-    box-sizing: border-box;
+  .carousel-item {
+    height: 100%; 
   }
-  
   /* =================== Card Section =================== */
   .card-section {
     padding: 40px 0;
@@ -106,9 +88,12 @@
     height: auto;
     padding: 40px;
   }
-  
-  .Card-Title {
-    text-transform: capitalize;
+
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
     text-align: center;
   }
   
@@ -622,7 +607,13 @@
   @media (min-width: 342px) {
     /* Hero Section  */
     .hero-Section {
-      height: 680px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 780px;
+    }
+    .hero-conatiner{
+      margin-bottom: 50px;
     }
     .hero-content {
       display: flex;
@@ -630,11 +621,30 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      height: 228px;
-      padding-top: 50px;
+      height: 390px;
     }
-    .img-hero-section {
-      padding: 30px;
+    .hero-image-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 390px;
+    }
+    .img-hero-section{
+      height: 120vh;
+      width: 90vw;
+      object-fit: cover;
+      margin-bottom: 50px;
+      border-radius: 20px;
+    }
+
+    /* classes Section  */
+    .Card-Title h1{
+      text-transform: capitalize;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 600;
     }
     /* ======================================================================================== */
     /* ====================================== ABOUT PAGE ====================================== */
@@ -676,16 +686,45 @@
   @media (min-width: 769px) {
     /* Hero Section  */
     .hero-Section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 780px;
     }
-    .hero-content{
-      height: 228px;
-      padding-top: 70px;
+    .hero-conatiner{
+      margin-bottom: 50px;
     }
-    .img-hero-section {
-      padding: 30px;
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 390px;
     }
-  
+    .hero-image-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 390px;
+    }
+    .img-hero-section{
+      height: 120vh;
+      width: 90vw;
+      object-fit: cover;
+      margin-bottom: 50px;
+      border-radius: 20px;
+    }
+
+    /* classes Section  */
+    .Card-Title h1{
+      text-transform: capitalize;
+      text-align: center;
+      font-size: 3.5rem;
+      font-weight: 600;
+    }
     /* ======================================================================================== */
     /* ====================================== ABOUT PAGE ====================================== */
     /* ======================================================================================== */
@@ -743,20 +782,54 @@
     .hero-Section {
       height: 670px;
     }
+    .hero-container{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;  
+      align-items: center;
+      height: 670px;
+      margin-bottom: 0;
+    }
     .hero-content {
-      padding-top: 250px;
-      height: 250px;
+      height: 335px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: start;
       text-align: start;
     }
-    .img-hero-section {
-      margin-top: 80px;
-      margin-bottom: 70px;
-      padding: 1px;
-  
+    .hero-Section h1{
+      font-size: 4rem;
+      margin-bottom: 80px;
+      font-weight: 800;
+    }
+    .hero-Section p{
+      margin-bottom: 90px;
+      text-wrap: wrap;
+    }
+    .hero-image-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 435px;
+      width: 350px;
+    }
+    .img-hero-section{
+      height: 140vh;
+      width: 45vw;
+      margin: 0;
+      object-fit: fill;
+      border-radius: 20px;
+    }
+
+    /* classes Section  */
+    .Card-Title h1{
+      text-transform: capitalize;
+      text-align: center;
+      font-size: 3.5rem;
+      font-weight: 600;
     }
   
     /* ======================================================================================== */
