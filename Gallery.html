@@ -29,7 +29,7 @@
   </head>
   <body>
     <!-- NAV SECTION  -->
-    <nav class="navbar sticky-top navbar-dark bg-dark navbar-expand-lg w-100 position-relative">
+    <nav class="navbar sticky-top navbar-expand-lg w-100 position-relative">
       <div class="container-fluid px-4 d-flex justify-content-between align-items-center w-100">
         
         <!-- Left side of navbar -->
@@ -38,7 +38,7 @@
         </a>
     
         <!-- Centered Logo -->
-        <a class="navbar-logo position-absolute top-50 start-50 translate-middle" href="/">
+        <a class="navbar-logo position-absolute top-50 start-50 translate-middle" href="#">
         <!-- position absolute top-to start-50 translate-middle: centers the logo in the navbar -->
           <img src="/assets/FitnessLogo.png" alt="Logo" width="70" height="60" class="d-inline-block align-text-top">
         </a>
@@ -48,8 +48,8 @@
           class="navbar-toggler"
           type="button"
           data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasDarkNavbar"
-          aria-controls="offcanvasDarkNavbar"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
@@ -57,18 +57,18 @@
     
         <!-- Offcanvas Menu -->
         <div 
-          class="offcanvas offcanvas-end text-bg-dark" 
+          class="offcanvas offcanvas-end" 
           tabindex="-1" 
-          id="offcanvasDarkNavbar" 
-          aria-labelledby="offcanvasDarkNavbarLabel"
+          id="offcanvasNavbar" 
+          aria-labelledby="offcanvasNavbarLabel"
         >
           <div class="offcanvas-header">
             <h5 
-              class="offcanvas-title company-name" id="offcanvasDarkNavbarLabel"
+              class="offcanvas-title company-name" id="offcanvasNavbarLabel"
             >
               ABC Fitness
             </h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
