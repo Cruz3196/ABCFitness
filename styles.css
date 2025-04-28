@@ -11,7 +11,7 @@
   
   /* =================== Button Styles =================== */
 
-  button.Form-button {
+  input.Form-button {
     border-radius: 20px;
     height: 50px;
   }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
+    <script src="script.js"></script>
 
     <!-- Bootstrap  -->
     <link
@@ -314,13 +314,19 @@
       <!-- Form Section  -->
       <section class="Form-Section">
         <div class="container">
-          <form class="Form-card">
+          <form class="Form-card" onsubmit="submit_function()">
             <div class="mb-5">
-              <label for="exampleInputEmail1" class="form-label Form-Intouch"
-                >get in touch</label
-              >
+              <label 
+                for="exampleInputEmail1" 
+                class="form-label Form-Intouch"
+                >
+                get in touch
+                </label>
               <h1 class="Form-title">Join our newsletter</h1>
-              <div id="emailHelp" class="form-text mb-4 Form-subtitle">
+              <div 
+                id="emailHelp" 
+                class="form-text mb-4 Form-subtitle"
+                >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </div>
               <div
@@ -335,10 +341,13 @@
                     placeholder="Your email"
                   />
                 </div>
-                <div class="col-12 col-lg-4">
-                  <button type="submit" class="btn btn-dark Form-button w-100">
-                    Subscribe
-                  </button>
+                <div class="col-12 col-lg-4">                   
+                  <input
+                    id="submitBtn"
+                    type="submit"
+                    value="Subscribe" 
+                    class="btn btn-dark Form-button w-100"
+                  >
                 </div>
               </div>
             </div>
@@ -531,6 +540,8 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
-    ></script>
+    >
+    </script>
+    <script src="script.js"></script>
   </body>
 </html>
