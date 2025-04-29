@@ -59,6 +59,22 @@
     font-weight: 700;
     color: black;
   }
+  .icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;        
+    height: 50px;        
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white; 
+  }
+  
+  .icon-circle i {
+    font-size: 20px;    
+    color: black;        
+  }
+  
   
   /* ======================================================================================== */
   /* ====================================== HOME PAGE ====================================== */
@@ -681,7 +697,30 @@
   .contact-form-section {
     height: 450px;
   }
-  
+
+  /* ======================================================================================== */
+  /* ====================================== Cart Page ====================================== */
+  /* ======================================================================================== */
+  .cart-title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  .cart-content{
+    padding-top: 50px;
+  }
+  .check-out-content{
+    padding-top: 50px;
+  }
+  .checkout-title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+  }
   /* ======================================================================================== */
   /* ====================================== Footer Section ================================== */
   /* ======================================================================================== */
