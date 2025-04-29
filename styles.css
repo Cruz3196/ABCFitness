@@ -886,6 +886,10 @@
       height: auto;
       padding: 30px;
     }
+
+    .Shopping-cart-section{
+      height: 130vh;
+    }
   
     /* footer section  */
     .Footer-title {
@@ -1005,6 +1009,9 @@
       width: 26px;
       height: 26px;
       margin-right: 14px;
+    }
+    .Shopping-cart-section{
+      height: 90vh;
     }
   }
   
@@ -1156,5 +1163,8 @@
       width: 26px;
       height: 26px;
       margin-right: 14px;
+    }
+    .Shopping-cart-section{
+      height: 90vh;
     }
   }
