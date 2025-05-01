@@ -16,5 +16,11 @@
         "name": "ABC Yoga Mat",
         "price": "$15.99",
         "image": "/assets/Client2_YogaMat.png"
+    },
+    {
+        "id": 2,
+        "name": "ABC Water Bottle",
+        "price": "$10.99",
+        "image": "/assets/Client2_WaterBottle.png"
     }
 ]

@@ -70,7 +70,7 @@ const loadServices = () => {
 loadProducts();
 loadServices();
 
-
+Alerts for sub & contact
 function subscription(){
     alert("Thank you for subscribing")
 }
