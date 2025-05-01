@@ -101,6 +101,10 @@
             <section class="Shopping-cart-section">
                 <div class="container">
                         <div class="row justify-content-center checkout-container">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h2 class="cart-title mb-4">Your Cart</h2>
+                                <button class="btn btn-outline-danger btn-sm" onclick="clearCart()">Clear Cart</button>
+                            </div>
                             <!-- Cart Items -->
                             <div class="col-sm-12 col-md-12 col-lg-8 cart-content">
                                 
@@ -122,7 +126,7 @@
                                             <strong>Color:</strong> Gray
                                         </p>
                                         <div class="mt-2">
-                                            <button class="btn btn-sm btn-outline-danger me-2">
+                                            <button class="btn btn-sm btn-outline-danger me-2" onclick="remove_from_cart()">
                                                 Remove
                                             </button>
                                             <button class="btn btn-sm btn-outline-secondary">
@@ -174,7 +178,7 @@
                                         <span>$53.98</span>
                                     </div>
                                 
-                                    <button class="btn btn-primary w-100 mb-3">GO TO CHECKOUT</button>
+                                    <button class="btn btn-primary w-100 mb-3" onclick="checkout()">GO TO CHECKOUT</button>
                                 
                                     <div class="promo-code-section">
                                     <label class="form-label">
