@@ -295,10 +295,12 @@
     text-align: center;
   }
   
-  .product-card {
+  .listProduct{
     padding: 20px;
   }
-  
+  .serviceList{
+    padding:20px;
+  }
   .card {
     width: 100%;
   }

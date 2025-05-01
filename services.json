@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Group Kickboxing",
+        "description": "High-energy group kickboxing sessions designed to boost stamina, strength, and confidence.",
+        "image": "/assets/Client2_GroupKickboxing.png"
+    },
+    {
+        "id": 2,
+        "name": "Group Pilates",
+        "description": "Engage your core and improve flexibility with our expert-led group Pilates classes.",
+        "image": "/assets/Client2_GroupPilates.png"
+    },
+    {
+        "id": 3,
+        "name": "Group Yoga",
+        "description": "Find balance and peace through our calming group yoga sessions for all levels.",
+        "image": "/assets/Client2_GroupYoga.png"
+    },
+    {
+        "id": 4,
+        "name": "Individual Kickboxing",
+        "description": "Get personalized attention and tailored workouts in one-on-one kickboxing sessions.",
+        "image": "/assets/Client2_IndividualKickboxing.png"
+    },
+    {
+        "id": 5,
+        "name": "Individual Pilates",
+        "description": "Customized private Pilates sessions to meet your unique fitness goals and needs.",
+        "image": "/assets/Client2_IndividualPilates.png"
+    },
+    {
+        "id": 6,
+        "name": "Individual Yoga",
+        "description": "Deepen your practice with personalized yoga instruction tailored just for you.",
+        "image": "/assets/Client2_IndividualYoga.png"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "ABC T-Shirt",
+        "price": "$19.99",
+        "image": "/assets/Client2_TeeShirt.png"
+    },
+    {
+        "id": 2,
+        "name": "ABC Water Bottle",
+        "price": "$10.99",
+        "image": "/assets/Client2_WaterBottle.png"
+    },
+    {
+        "id": 3,
+        "name": "ABC Yoga Mat",
+        "price": "$15.99",
+        "image": "/assets/Client2_YogaMat.png"
+    }
+]

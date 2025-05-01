@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
 
     <!-- Bootstrap  -->
     <link
@@ -113,83 +112,12 @@
       <section class="card-section py-5">
         <div class="container">
           <h2 class="text-center mb-4">Explore Our Offerings</h2>
-          <div class="row card-container g-4">
           
-            <!-- Group Kickboxing -->
+          <!-- list the javascript div tag  -->
+          <div class="row listProduct g-4">
+            <!-- Product Cards -->
             <div class="col-6 col-md-6 col-lg-4 product-card">
-              <div class="card h-100">
-                <img src="/assets/Client2_GroupKickboxing.png" class="card-img-top" alt="Group Kickboxing Class" />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Group Kickboxing</h5>
-                  <p class="card-text">High-energy group kickboxing sessions designed to boost stamina, strength, and confidence.</p>
-                  <button type="button" class="btn btn-primary">Book Now</button>
-                </div>
-              </div>
-            </div>
-          
-            <!-- Group Pilates -->
-            <div class="col-6 col-md-6 col-lg-4 product-card">
-              <div class="card h-100">
-                <img src="/assets/Client2_GroupPilates.png" class="card-img-top" alt="Group Pilates Class" />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Group Pilates</h5>
-                  <p class="card-text">Engage your core and improve flexibility with our expert-led group Pilates classes.</p>
-                  <button type="button" class="btn btn-primary">Book Now</button>
-                </div>
-              </div>
-            </div>
-          
-            <!-- Group Yoga -->
-            <div class="col-6 col-md-6 col-lg-4 product-card">
-              <div class="card h-100">
-                <img src="/assets/Client2_GroupYoga.png" class="card-img-top" alt="Group Yoga Class" />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Group Yoga</h5>
-                  <p class="card-text">Find balance and peace through our calming group yoga sessions for all levels.</p>
-                  <button type="button" class="btn btn-primary">Book Now</button>
-                </div>
-              </div>
-            </div>
-          
-            <!-- Individual Kickboxing -->
-            <div class="col-6 col-md-6 col-lg-4 product-card">
-              <div class="card h-100">
-                <img src="/assets/Client2_IndividualKickboxing.png" class="card-img-top" alt="One-on-One Kickboxing" />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Individual Kickboxing</h5>
-                  <p class="card-text">Get personalized attention and tailored workouts in one-on-one kickboxing sessions.</p>
-                  <button type="button" class="btn btn-primary">Book Now</button>
-                </div>
-              </div>
-            </div>
-          
-            <!-- Individual Pilates -->
-            <div class="col-6 col-md-6 col-lg-4 product-card">
-              <div class="card h-100">
-                <img src="/assets/Client2_IndividualPilates.png" class="card-img-top" alt="Private Pilates Session" />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Individual Pilates</h5>
-                  <p class="card-text">Customized private Pilates sessions to meet your unique fitness goals and needs.</p>
-                  <button type="button" class="btn btn-primary">Book Now</button>
-                </div>
-              </div>
-            </div>
-          
-            <!-- Individual Yoga -->
-            <div class="col-6 col-md-6 col-lg-4 product-card">
-              <div class="card h-100">
-                <img src="/assets/Client2_IndividualYoga.png" class="card-img-top" alt="Private Yoga Session" />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Individual Yoga</h5>
-                  <p class="card-text">Deepen your practice with personalized yoga instruction tailored just for you.</p>
-                  <button type="button" class="btn btn-primary">Book Now</button>
-                </div>
-              </div>
-            </div>
-          
-            <!-- Merch: T-Shirt -->
-            <div class="col-6 col-md-6 col-lg-4 product-card">
-              <div class="card h-100">
+              <div class="card h-100 item">
                 <img src="/assets/Client2_TeeShirt.png" class="card-img-top" alt="Branded T-Shirt" />
                 <div class="card-body">
                   <h5 class="card-title text-center">Branded T-Shirt</h5>
@@ -203,37 +131,18 @@
                 </div>
               </div>
             </div>
-          
-            <!-- Merch: Water Bottle -->
-            <div class="col-6 col-md-6 col-lg-4 product-card">
+          </div>
+
+          <!-- Service Cards  -->
+          <div class="row serviceList g-4">
+            <!-- Individual Services -->
+            <div class="col-6 col-md-6 col-lg-4 service-card">
               <div class="card h-100">
-                <img src="/assets/Client2_WaterBottle.png" class="card-img-top" alt="Branded Water Bottle" />
+                <img src="/assets/Client2_IndividualPilates.png" class="card-img-top" alt="Private Pilates Session" />
                 <div class="card-body">
-                  <h5 class="card-title text-center">Branded Water Bottle</h5>
-                  <p class="card-text">Stay hydrated with our eco-friendly, reusable branded water bottles.</p>
-                  <button 
-                    onclick="add_to_cart()"
-                    type="button" 
-                    class="btn btn-success">
-                    Add Item
-                  </button>
-                </div>
-              </div>
-            </div>
-          
-            <!-- Merch: Yoga Mat -->
-            <div class="col-6 col-md-6 col-lg-4 product-card">
-              <div class="card h-100">
-                <img src="/assets/Client2_YogaMat.png" class="card-img-top" alt="Branded Yoga Mat" />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Branded Yoga Mat</h5>
-                  <p class="card-text">Practice with comfort and style using our premium branded yoga mats.</p>
-                  <button
-                    onclick="add_to_cart()"
-                    type="button" 
-                    class="btn btn-success">
-                    Add Item
-                  </button>
+                  <h5 class="card-title text-center">Individual Pilates</h5>
+                  <p class="card-text">Customized private Pilates sessions to meet your unique fitness goals and needs.</p>
+                  <button type="button" class="btn btn-primary">Book Now</button>
                 </div>
               </div>
             </div>
@@ -427,5 +336,6 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+        <script src="script.js"></script>
   </body>
 </html>
