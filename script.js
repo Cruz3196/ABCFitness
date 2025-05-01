@@ -8,6 +8,7 @@ const addProductsToHTML = () => {
         listProducts.forEach(product => {
             let newProduct = document.createElement('div');
             newProduct.classList.add('col-6', 'col-md-6', 'col-lg-4', 'product-card');
+            newProduct.dataset.id = product.id;
             newProduct.innerHTML = `
                 <div class="card h-100">
                     <img src="${product.image}" class="card-img-top" alt="${product.name}" />
@@ -73,6 +74,10 @@ loadServices();
 // CLICK EVENT TO ADD PRODUCT TO CART 
 listProductHTML.addEventListener('click', (e) => {
     let positionClick = e.target;
+    if(positionClick.classList.contains('addCart')){
+        let product_id = positionClick.parentElement.dataset.id;
+        alert(product_id);
+    }
 })
 
 // ALERTS FOR SUB & CONTACT
