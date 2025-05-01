@@ -86,107 +86,115 @@
     
         <main>
 
-            <!-- Cart Section -->
+            <!-- Title  -->
             <section class="about-section">
                 <div class="container">
                     <div class="row justify-content-md-center">
                         <div class="col-sm-12 col-md-12 col-lg-6">
-                            <p class="about-title">Shopping Cart</p>
+                            <p class="about-title">Checkout</p>
                         </div>
                     </div>
                 </div>
             </section>
-            
-            <!-- Table Section for items added to the cart  -->
-            
+
+            <!-- Check out Content  -->
             <section class="Shopping-cart-section">
                 <div class="container">
-                    <div class="row justify-content-md-center">
-                        <!-- Shopping Cart table -->
-                        <div class="col-sm-12 col-md-6 col-lg-6 cart-content mb-4">
-                            <div class="shopping-cart">
-                                <h2 class="cart-title">Your Cart</h2>
-                                <table class="table table-bordered">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th scope="col">Items</th>
-                                            <th scope="col">Qty</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Remove</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="cart-items">
-                                        <!-- Example cart item -->
-                                        <tr>
-                                            <td>Product 1</td>
-                                            <td>
-                                                <input type="number" class="form-control" value="1" min="1">
-                                            </td>
-                                            <td>$10.00</td>
-                                            <td>
-                                                <button 
-                                                    onclick="remove_from_cart()"
-                                                    class="btn btn-danger btn-sm">
-                                                        Remove
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <!-- More cart items dynamically added here -->
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="3" class="text-end"><strong>Grand Total:</strong></td>
-                                            <td colspan="2" id="grand-total">$10.00</td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                        <div class="row justify-content-center checkout-container">
+                            <!-- Cart Items -->
+                            <div class="col-sm-12 col-md-12 col-lg-8 cart-content">
+                                
+                                <!-- Cart Item -->
+                                <div class="card mb-3 p-3 cart-item shadow-sm rounded">
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-md-3">
+                                            <img src="/assets/Client2_TeeShirt.png" class="img-fluid rounded" alt="Item">
+                                        </div>
+                                    <div class="col-md-6">
+                                        <h5 
+                                            class="fw-bold mb-1">
+                                            Branded T-Shirt
+                                        </h5>
+                                        <p class="mb-0">
+                                            <strong>Size:</strong> M
+                                        </p>
+                                        <p class="mb-0">
+                                            <strong>Color:</strong> Gray
+                                        </p>
+                                        <div class="mt-2">
+                                            <button class="btn btn-sm btn-outline-danger me-2">
+                                                Remove
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary">
+                                                Move to wish list
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-end">
+                                        <input 
+                                            type="number" class="form-control mb-2" value="1" 
+                                            min="1" 
+                                            style="max-width: 80px; margin-left: auto;">
+                                        <p class="mb-0">
+                                            <s>$119</s> 
+                                            <strong>$101</strong>
+                                        </p>
+                                        <small 
+                                            class="text-danger">
+                                            You save 15%
+                                        </small>
+                                    </div>
+                                    </div>
+                                </div>
+                            <!-- Repeat .cart-item for more items -->
                             </div>
-                        </div>
-
-
-                        <!-- Check Out form  -->
-                        <div class="col-sm-12 col-md-6 col-lg-6 check-out-content">
-                            <div class="checkout-form">
-                                <h2 class="checkout-title">Checkout Details</h2>
-                                <form action="/submit-order" method="POST">
-                                    <div class="form-group mb-3">
-                                        <label for="fullName">Full Name</label>
-                                        <input type="text" class="form-control" id="fullName" name="fullName" required>
+                        
+                            <!-- Checkout Summary -->
+                            <div class="col-sm-12 col-md-12 col-lg-4 check-out-content">
+                                <div class="checkout-summary-box p-4 shadow rounded">
+                                    <h5 class="mb-4 fw-bold">
+                                        The total amount of
+                                    </h5>
+                                
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Temporary amount</span>
+                                        <span>$53.98</span>
                                     </div>
-                                    <div class="form-group mb-3">
-                                        <label for="email">Email Address</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Shipping</span>
+                                        <span>Gratis</span>
                                     </div>
-                                    <div class="form-group mb-3">
-                                        <label for="address">Shipping Address</label>
-                                        <input class="form-control" id="address" name="address" rows="3" required></input>
+                                
+                                    <hr>
+                                
+                                    <div class="d-flex justify-content-between fw-bold mb-4">
+                                        <span>
+                                            The total amount of (including VAT)
+                                        </span>
+                                        <span>$53.98</span>
                                     </div>
-                                    <div class="form-group mb-3">
-                                        <label for="city">City</label>
-                                        <input type="text" class="form-control" id="city" name="city" required>
+                                
+                                    <button class="btn btn-primary w-100 mb-3">GO TO CHECKOUT</button>
+                                
+                                    <div class="promo-code-section">
+                                    <label class="form-label">
+                                        Apply promo code
+                                    </label>
+                                        <div class="d-flex">
+                                            <input 
+                                                type="text" 
+                                                class="form-control me-2" placeholder="Promo code">
+                                            <button class="btn btn-outline-primary">
+                                                Apply
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="form-group mb-3">
-                                        <label for="postalCode">Postal Code</label>
-                                        <input type="text" class="form-control" id="postalCode" name="postalCode" required>
-                                    </div>
-                                    <div class="form-group mb-4">
-                                        <label for="paymentMethod">Payment Method</label>
-                                        <select class="form-control" id="paymentMethod" name="paymentMethod" required>
-                                            <option value="">Select Payment Method</option>
-                                            <option value="credit-card">Credit Card</option>
-                                            <option value="paypal">PayPal</option>
-                                            <option value="cash-on-delivery">Cash on Delivery</option>
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="btn btn-dark Form-button w-100"
-                                    onclick="checkout()"
-                                    >Place Order</button>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </section>
+                            
         
             <!-- Footer Section  -->
             <section class="Footer-Section">

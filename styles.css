@@ -740,26 +740,51 @@
   /* ======================================================================================== */
   /* ====================================== Cart Page ====================================== */
   /* ======================================================================================== */
-  .cart-title{
+  .checkout-container{
     display: flex;
     justify-content: center;
-    text-align: center;
-    font-weight: 700;
+    align-items: center;
+  }
+  .cart-title {
     font-size: 2rem;
-  }
-  .cart-content{
-    padding-top: 50px;
-  }
-  .check-out-content{
-    padding-top: 50px;
-  }
-  .checkout-title{
-    display: flex;
-    justify-content: center;
-    text-align: center;
     font-weight: 700;
-    font-size: 2rem;
+    text-align: center;
   }
+  
+  .cart-item {
+    background-color: #fff;
+  }
+  
+  .cart-item h5 {
+    font-size: 1.2rem;
+  }
+  .checkout-summary-box {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .checkout-summary-box h5 {
+    font-size: 1.25rem;
+  }
+  
+  .checkout-summary-box .btn-primary {
+    background-color: #005eff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 0;
+    font-weight: bold;
+  }
+  
+  .checkout-summary-box .promo-code-section input {
+    border-radius: 8px;
+  }
+  
+  .checkout-summary-box .promo-code-section .btn-outline-primary {
+    border-radius: 8px;
+    font-weight: 500;
+  }
+  
   /* ======================================================================================== */
   /* ====================================== Footer Section ================================== */
   /* ======================================================================================== */
@@ -911,6 +936,7 @@
       font-size: 2.5rem;
       font-weight: 600;
     }
+
 /* ======================================================================================== */
 /* ====================================== ABOUT PAGE ====================================== */
 /* ======================================================================================== */
@@ -927,8 +953,16 @@
       padding: 30px;
     }
 
+    /* Cart Page  */
     .Shopping-cart-section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 130vh;
+    }
+
+    .cart-content{
+      padding-bottom:40px;
     }
   
     /* footer section  */
@@ -1050,8 +1084,16 @@
       height: 26px;
       margin-right: 14px;
     }
+
+    /* Cart Page  */
     .Shopping-cart-section{
-      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+    .cart-content{
+      padding-bottom:50px;
     }
   }
   
@@ -1205,6 +1247,12 @@
       margin-right: 14px;
     }
     .Shopping-cart-section{
-      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+    }
+    .cart-content{
+      padding-bottom:180px;
     }
   }
