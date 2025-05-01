@@ -1,4 +1,4 @@
-// PRODUCTS
+// LIST PRODUCTS
 let listProductHTML = document.querySelector(".listProduct");
 let listProducts = [];
 
@@ -14,7 +14,7 @@ const addProductsToHTML = () => {
                     <div class="card-body">
                         <h5 class="card-title text-center">${product.name}</h5>
                         <p class="card-text">${product.price}</p>
-                        <button type="button" class="btn btn-success">Add Item</button>
+                        <button type="button" class="addCart btn btn-success">Add To Cart</button>
                     </div>
                 </div>
             `;
@@ -32,7 +32,7 @@ const loadProducts = () => {
         });
 };
 
-// SERVICES
+// LISTING SERVICES
 let serviceListHTML = document.querySelector(".serviceList");
 let serviceList = [];
 
@@ -70,7 +70,12 @@ const loadServices = () => {
 loadProducts();
 loadServices();
 
-// Alerts for sub & contact
+// CLICK EVENT TO ADD PRODUCT TO CART 
+listProductHTML.addEventListener('click', (e) => {
+    let positionClick = e.target;
+})
+
+// ALERTS FOR SUB & CONTACT
 function subscription(){
     alert("Thank you for subscribing")
 }
