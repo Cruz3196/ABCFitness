@@ -61,26 +61,39 @@
     padding-left: 10px;
     padding-right: 10px;
   }
-  .cart-icon {
-    font-size: 1.2rem;
+  .cart-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 18px;
   }
-  .cart-count {
-    font-weight: bold;
+  
+  .cart-link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
   }
+  
   .cart-icon {
     font-size: 1.5rem;
+    color: black; /* or your desired icon color */
   }
+  
   .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background-color: red;
     font-weight: bold;
+    font-size: 0.75rem;
   }
+  
   
   /* off canvas body  */
 
