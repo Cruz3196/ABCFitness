@@ -43,6 +43,7 @@ const addServicesToHTML = () => {
         serviceList.forEach(service => {
             let newService = document.createElement('div');
             newService.classList.add('col-6', 'col-md-6', 'col-lg-4', 'service-card');
+            newService.dataset.id = service.id;
             newService.innerHTML = `
                 <div class="card h-100">
                     <img src="${service.image}" class="card-img-top" alt="${service.name}" />
@@ -75,7 +76,8 @@ loadServices();
 listProductHTML.addEventListener('click', (e) => {
     let positionClick = e.target;
     if(positionClick.classList.contains('addCart')){
-        let product_id = positionClick.parentElement.dataset.id;
+        let productCard = positionClick.closest('.product-card');
+        let product_id = productCard?.dataset.id;
         alert(product_id);
     }
 })
