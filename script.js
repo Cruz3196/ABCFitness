@@ -78,9 +78,41 @@ listProductHTML.addEventListener('click', (e) => {
     if(positionClick.classList.contains('addCart')){
         let productCard = positionClick.closest('.product-card');
         let product_id = productCard?.dataset.id;
-        alert(product_id);
+        addToCart(product_id);
     }
 })
+
+
+// this is searching the html class 
+let listCartHTML = document.querySelector(".listCart");
+// for adding to cart 
+// a variable cart to store the cart value 
+let carts = []; 
+
+// creating a function called "addToCart"
+// increasing the quantity of the product
+const addToCart = (product_id) => {
+    let positionThisProductInCart = carts.findIndex((value) => value.product_id == product_id); 
+    if(carts.length <= 0){
+        carts = [{
+            product_id: product_id,
+            quantity: 1
+        }]
+    }else if(positionThisProductInCart < 0){
+        carts.push({
+            product_id:product_id,
+            quantity: 1
+        });
+    } else {
+        carts[positionThisProductInCart].quantity = carts[positionThisProductInCart].quantity + 1;
+    }
+    console.log(carts);
+}
+
+// function for the icon 
+let iconCartSpan = document.querySelector(".icon-cart span");
+
+
 
 // ALERTS FOR SUB & CONTACT
 function subscription(){
