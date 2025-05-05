@@ -66,6 +66,55 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // Function to add item to cart
+    const addToCart = (product_id) => {
+        // Check if product exists in products list
+        const product = listProducts.find(p => p.id == product_id);
+        if (!product) {
+            console.error('Product not found');
+            return;
+        }
+        
+        // Check if product is already in cart
+        const existingItem = carts.find(item => item.product_id == product_id);
+        
+        if (existingItem) {
+            // If already in cart, increase quantity
+            existingItem.quantity += 1;
+        } else {
+            // If not in cart, add new item
+            const newItem = {
+                product_id: product_id,
+                quantity: 1
+            };
+            carts.push(newItem);
+        }
+        
+        // Update session storage and UI
+        saveCartToSession();
+        
+        // Show confirmation message
+        const productName = product.name;
+        const confirmationMessage = document.createElement('div');
+        confirmationMessage.classList.add('alert', 'alert-success', 'position-fixed', 'top-0', 'end-0', 'm-3');
+        confirmationMessage.style.zIndex = '9999';
+        confirmationMessage.innerHTML = `
+            <strong>Success!</strong> ${productName} added to cart.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `;
+        document.body.appendChild(confirmationMessage);
+        
+        // Remove confirmation after 3 seconds
+        setTimeout(() => {
+            confirmationMessage.remove();
+        }, 3000);
+        
+        // Also allow manual close
+        confirmationMessage.querySelector('.btn-close').addEventListener('click', () => {
+            confirmationMessage.remove();
+        });
+    };
+
     // Function to adjust cart section height based on content
     const adjustCartSectionHeight = () => {
         const cartSection = document.querySelector('.Shopping-cart-section');
