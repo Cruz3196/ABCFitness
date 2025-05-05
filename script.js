@@ -344,7 +344,11 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Item removed (using updated function)");
         // This is just a fallback, we now use event listeners instead
     };
-    window.checkout = () => alert("Proceeding to checkout with total: $" + calculateCartTotal());
+    window.checkout = () => {
+        alert("Proceeding to checkout with total: $" + calculateCartTotal());
+        clearCart();
+    };
+
     window.clearCart = () => {
         carts = [];
         saveCartToSession();
