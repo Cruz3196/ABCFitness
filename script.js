@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let serviceListHTML = document.querySelector(".serviceList");
     let listCartHTML = document.querySelector(".cart-content");
     let iconCartSpan = document.querySelector(".cart-count");
+    let contactForm = document.getElementById("contact-form");
     // Checkout summary selectors
     let checkoutSummaryBox = document.querySelector(".checkout-summary-box");
     let temporaryAmountSpan = checkoutSummaryBox?.querySelector(".d-flex:nth-child(2) span:last-child");
@@ -339,7 +340,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Misc dummy functions
     window.subscription = () => alert("Thank you for subscribing");
-    window.contact = () => alert("Your message has been sent");
     window.remove_from_cart = () => {
         alert("Item removed (using updated function)");
         // This is just a fallback, we now use event listeners instead
@@ -395,4 +395,11 @@ document.addEventListener("DOMContentLoaded", () => {
             adjustCartSectionHeight();
         }
     });
+
+    // Setting up the contact us form in the contact us page 
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault(); 
+        let name = document.getElementById('name').value;
+        alert("Thanks for reaching out " + name);
+    })
 });
