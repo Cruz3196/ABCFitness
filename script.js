@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <i class="bi bi-cart-x" style="font-size: 3rem;"></i>
                 <h4 class="mt-3">Your cart is empty</h4>
                 <p class="text-muted">Add some products to your cart to see them here</p>
-                <a href="products.html" class="btn btn-primary mt-3">Continue Shopping</a>
+                <a href="Gallery.html" class="btn btn-primary mt-3">Continue Shopping</a>
             `;
             listCartHTML.appendChild(emptyCartMessage);
         } else {
