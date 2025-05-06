@@ -99,23 +99,95 @@
             <!-- Check out Content  -->
             <section class="Shopping-cart-section">
                 <div class="container">
-                        <div class="row justify-content-center checkout-container">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h2 class="cart-title mb-4">Your Cart</h2>
-                                <button class="btn btn-outline-danger btn-sm" onclick="clearCart()">Clear Cart</button>
-                            </div>
-                            <!-- Cart Items -->
-                            <div class="col-sm-12 col-md-12 col-lg-8 cart-content">
+                    <div class="row justify-content-center checkout-container">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="cart-title mb-4">Your Cart</h2>
+                            <button class="btn btn-outline-danger btn-sm" onclick="clearCart()">Clear Cart</button>
+                        </div>
+                        
+                        <!-- Checkout Form (Now on the left in the wider column) -->
+                        <div class="col-sm-12 col-md-12 col-lg-8 check-out-content">
+                            <div class="checkout-form-box p-4 shadow rounded">
+                                <h5 class="mb-4 fw-bold">Customer Information</h5>
                                 
-                                <!-- Cart Item -->
-                                <div class="card mb-3 p-3 cart-item shadow-sm rounded list listCart">
-                                    <div class="row g-3 align-items-center">
-                                        <div class="col-md-3">
-                                            <img src="/assets/Client2_TeeShirt.png" class="img-fluid rounded" alt="Item">
+                                <!-- Customer Information Form -->
+                                <form>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">First Name</label>
+                                            <input type="text" class="form-control" required>
                                         </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" required>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label">Address</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    
+                                    <div class="row mb-3">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">City</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label class="form-label">State</label>
+                                            <select class="form-select" required>
+                                                <option value="">Select</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="AK">Alaska</option>
+                                                <!-- Add more states as needed -->
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label class="form-label">Zip</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <hr class="my-4">
+                                    
+                                    <h5 class="mb-4 fw-bold">Payment Information</h5>
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label">Card Number</label>
+                                        <input type="text" class="form-control" placeholder="XXXX XXXX XXXX XXXX" required>
+                                    </div>
+                                    
+                                    <div class="row mb-3">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Expiration Date</label>
+                                            <input type="text" class="form-control" placeholder="MM/YY" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">CVV</label>
+                                            <input type="text" class="form-control" placeholder="XXX" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="btn btn-primary w-100 mt-4" type="submit" onclick="processPayment()">COMPLETE PURCHASE</button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- Cart Summary (Now on the right in the narrower column) -->
+                        <div class="col-sm-12 col-md-12 col-lg-4 cart-content">
+                            <!-- Cart Item -->
+                            <div class="card mb-3 p-3 cart-item shadow-sm rounded list listCart">
+                                <div class="row g-3 align-items-center">
+                                    <div class="col-md-3">
+                                        <img src="/assets/Client2_TeeShirt.png" class="img-fluid rounded" alt="Item">
+                                    </div>
                                     <div class="col-md-6">
-                                        <h5 
-                                            class="fw-bold mb-1">
+                                        <h5 class="fw-bold mb-1">
                                             Branded T-Shirt
                                         </h5>
                                         <p class="mb-0">
@@ -139,58 +211,14 @@
                                             min="1" 
                                             style="max-width: 80px; margin-left: auto;">
                                     </div>
-                                    </div>
                                 </div>
+                            </div>
                             <!-- Repeat .cart-item for more items -->
-                            </div>
-                        
-                            <!-- Checkout Summary -->
-                            <div class="col-sm-12 col-md-12 col-lg-4 check-out-content">
-                                <div class="checkout-summary-box p-4 shadow rounded">
-                                    <h5 class="mb-4 fw-bold">
-                                        The total amount of
-                                    </h5>
-                                
-                                    <div class="d-flex justify-content-between mb-2">
-                                        <span>Temporary amount</span>
-                                        <span>$53.98</span>
-                                    </div>
-                                    <div class="d-flex justify-content-between mb-2">
-                                        <span>Shipping</span>
-                                        <span>Gratis</span>
-                                    </div>
-                                
-                                    <hr>
-                                
-                                    <div class="d-flex justify-content-between fw-bold mb-4">
-                                        <span>
-                                            The total amount of (including VAT)
-                                        </span>
-                                        <span>$53.98</span>
-                                    </div>
-                                
-                                    <button class="btn btn-primary w-100 mb-3" onclick="checkout()">GO TO CHECKOUT</button>
-                                
-                                    <div class="promo-code-section">
-                                    <label class="form-label">
-                                        Apply promo code
-                                    </label>
-                                        <div class="d-flex">
-                                            <input 
-                                                type="text" 
-                                                class="form-control me-2" placeholder="Promo code">
-                                            <button class="btn btn-outline-primary">
-                                                Apply
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
+                </div>
             </section>
                             
-        
             <!-- Footer Section  -->
             <section class="Footer-Section">
                 <div class="container">

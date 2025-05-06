@@ -721,12 +721,6 @@
 .Shopping-cart-section .container {
   width: 100%;
 }
-
-/* Ensure checkout summary has a minimum height */
-.checkout-summary-box {
-  height: 100%;
-  min-height: 300px;
-}
   
   /* ======================================================================================== */
   /* ====================================== Contact Page ==================================== */
@@ -752,11 +746,6 @@
   /* ======================================================================================== */
   /* ====================================== Cart Page ====================================== */
   /* ======================================================================================== */
-  .checkout-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   .cart-title {
     font-size: 2rem;
     font-weight: 700;
@@ -769,32 +758,6 @@
   
   .cart-item h5 {
     font-size: 1.2rem;
-  }
-  .checkout-summary-box {
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
-  
-  .checkout-summary-box h5 {
-    font-size: 1.25rem;
-  }
-  
-  .checkout-summary-box .btn-primary {
-    background-color: #005eff;
-    border: none;
-    border-radius: 30px;
-    padding: 10px 0;
-    font-weight: bold;
-  }
-  
-  .checkout-summary-box .promo-code-section input {
-    border-radius: 8px;
-  }
-  
-  .checkout-summary-box .promo-code-section .btn-outline-primary {
-    border-radius: 8px;
-    font-weight: 500;
   }
   
   /* ======================================================================================== */
@@ -948,6 +911,9 @@
       font-size: 2.5rem;
       font-weight: 600;
     }
+    .cart-content{
+      margin-top: 50px !important;;
+    }
 
 /* ======================================================================================== */
 /* ====================================== ABOUT PAGE ====================================== */
@@ -973,14 +939,6 @@
       min-height: 80vh;
       padding: 3rem 0;
     }
-    .cart-content{
-      margin-bottom:0;
-    }
-
-    .checkout-summary-box{
-      margin-bottom: 0;
-    }
-  
     /* footer section  */
     .Footer-title {
       padding-left: 60px;
@@ -1108,12 +1066,6 @@
       align-items: center;
       min-height: 70vh;
       padding: 4rem 0;
-    }
-    .cart-content{
-      margin-bottom:0;
-    }
-    .checkout-summary-box{
-      margin-bottom: 0;
     }
   }
   
@@ -1273,8 +1225,7 @@
       min-height: 60vh;
       padding: 5rem 0;
     }
-    .checkout-summary-box {
-      position: sticky;
-      top: 20px;
+    .cart-content{
+      margin-top: 0 !important;;
     }
   }
