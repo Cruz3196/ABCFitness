@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let listCartHTML = document.querySelector(".cart-content");
     let iconCartSpan = document.querySelector(".cart-count");
     let contactForm = document.getElementById("contact-form");
-    let subForm = document.getElementById("subform");
+    let subscribeForm = document.getElementById("subscribe");
     // Checkout summary selectors
     let checkoutSummaryBox = document.querySelector(".checkout-summary-box");
     let temporaryAmountSpan = checkoutSummaryBox?.querySelector(".d-flex:nth-child(2) span:last-child");
@@ -95,9 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Update session storage and UI
         saveCartToSession();
         
-        // Show confirmation message
-        const productName = product.name;
-        const confirmationMessage = document.createElement('div');
+    // Show confirmation message
+    const productName = product.name;
+    const confirmationMessage = document.createElement('div');
         confirmationMessage.classList.add('alert', 'alert-success', 'position-fixed', 'top-0', 'end-0', 'm-3');
         confirmationMessage.style.zIndex = '9999';
         confirmationMessage.innerHTML = `
@@ -398,24 +398,53 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Setting up the contact us form in the contact us page 
+ // Setting up the contact us form in the contact us page (only if it exists)
+ if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault(); 
-        // Retrieve the data from the form 
+        e.preventDefault();
+        // Retrieve the data from the form
         let name = document.getElementById('name').value;
         let email = document.getElementById('email').value;
         let description = document.getElementById('description').value;
         let topic = document.getElementById('topic').value;
-        
-        // storing the data, setItem is to store the items in the local storage
-        let usertopic = localStorage.setItem('topic', topic);
-        let username = localStorage.setItem('name', name);
-        let useremail = localStorage.setItem('email', email);
-        let userdescription = localStorage.setItem('description', description);
-
-
+        // storing the data in local storage
+        localStorage.setItem('topic', topic);
+        localStorage.setItem('name', name);
+        localStorage.setItem('email', email);
+        localStorage.setItem('description', description);
         // display a message
         alert("Thanks for reaching out! We will get back to you as soon as possible.");
-        
         contactForm.reset();
     });
+}
+
+    // Subscribe Form in Home page (only if it exists)
+    if (subscribeForm) {
+        subscribeForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Retrieve the data from the form
+            let email = document.getElementById('subscribe-email').value;
+            // storing the data in local storage
+            localStorage.setItem('subscribe-email', email);
+            // display a message
+            alert("Thanks for subscribing!");
+            subscribeForm.reset();
+        });
+    }
+
+    // Alternative approach for subscribe button (if you're using button instead of form)
+    const subscribeButton = document.getElementById('subscribe');
+    if (subscribeButton) {
+        subscribeButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Retrieve the data
+            let email = document.getElementById('subscribe-email').value;
+            // Store the data
+            localStorage.setItem('subscribe-email', email);
+            // Display a message
+            alert("Thanks for subscribing!");
+            // Clear the field
+            document.getElementById('subscribe-email').value = '';
+        });
+    }
 });
