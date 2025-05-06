@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let listCartHTML = document.querySelector(".cart-content");
     let iconCartSpan = document.querySelector(".cart-count");
     let contactForm = document.getElementById("contact-form");
+    let subForm = document.getElementById("subform");
     // Checkout summary selectors
     let checkoutSummaryBox = document.querySelector(".checkout-summary-box");
     let temporaryAmountSpan = checkoutSummaryBox?.querySelector(".d-flex:nth-child(2) span:last-child");
