@@ -399,7 +399,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // Setting up the contact us form in the contact us page 
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault(); 
+        // Retrieve the data from the form 
         let name = document.getElementById('name').value;
-        alert("Thanks for reaching out " + name);
-    })
+        let email = document.getElementById('email').value;
+        let description = document.getElementById('description').value;
+        let topic = document.getElementById('topic').value;
+        
+        // storing the data, setItem is to store the items in the local storage
+        let usertopic = localStorage.setItem('topic', topic);
+        let username = localStorage.setItem('name', name);
+        let useremail = localStorage.setItem('email', email);
+        let userdescription = localStorage.setItem('description', description);
+
+
+        // display a message
+        alert("Thanks for reaching out! We will get back to you as soon as possible.");
+        
+        contactForm.reset();
+    });
 });
