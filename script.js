@@ -397,23 +397,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Setting up the contact us form in the contact us page 
  // Setting up the contact us form in the contact us page (only if it exists)
- if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Retrieve the data from the form
-        let name = document.getElementById('name').value;
-        let email = document.getElementById('email').value;
-        let description = document.getElementById('description').value;
-        let topic = document.getElementById('topic').value;
-        // storing the data in local storage
-        localStorage.setItem('topic', topic);
-        localStorage.setItem('name', name);
-        localStorage.setItem('email', email);
-        localStorage.setItem('description', description);
-        // display a message
-        alert("Thanks for reaching out! We will get back to you as soon as possible.");
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Retrieve the data from the form
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let description = document.getElementById('description').value;
+            let topic = document.getElementById('topic').value;
+            // storing the data in local storage
+            localStorage.setItem('topic', topic);
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+            localStorage.setItem('description', description);
+            // display a message
+            alert("Thanks for reaching out! We will get back to you as soon as possible.");
         contactForm.reset();
     });
 }
@@ -434,17 +433,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Alternative approach for subscribe button (if you're using button instead of form)
     const subscribeButton = document.getElementById('subscribe');
-    if (subscribeButton) {
-        subscribeButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            // Retrieve the data
-            let email = document.getElementById('subscribe-email').value;
-            // Store the data
-            localStorage.setItem('subscribe-email', email);
-            // Display a message
-            alert("Thanks for subscribing!");
-            // Clear the field
-            document.getElementById('subscribe-email').value = '';
+        if (subscribeButton) {
+            subscribeButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Retrieve the data
+                let email = document.getElementById('subscribe-email').value;
+                // Store the data
+                localStorage.setItem('subscribe-email', email);
+                // Display a message
+                alert("Thanks for subscribing!");
+                // Clear the field
+                document.getElementById('subscribe-email').value = '';
         });
     }
 });
