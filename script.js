@@ -397,43 +397,41 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // contact form functionality on contact us page
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-      
+            e.preventDefault();
           // Get form values
-          const name = document.getElementById('name').value;
-          const email = document.getElementById('email').value;
-          const description = document.getElementById('description').value;
-          const topic = document.getElementById('topic').value;
-      
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const description = document.getElementById('description').value;
+            const topic = document.getElementById('topic').value;
+
           // Store locally if you want (optional)
-          localStorage.setItem('topic', topic);
-          localStorage.setItem('name', name);
-          localStorage.setItem('email', email);
-          localStorage.setItem('description', description);
-      
+            localStorage.setItem('topic', topic);
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+            localStorage.setItem('description', description);
+
           // Prepare EmailJS variables (these must match your template keys!)
-          const contactInfo = {
-            user_name: name,
-            user_email: email,
-            message: description,
-            topic: topic
-          };
-      
+            const contactInfo = {
+                user_name: name,
+                user_email: email,
+                message: description,
+                topic: topic
+        };
           // Send email
-          emailjs.send('service_q0580t8', 'template_cqjagih', contactInfo)
-            .then(() => {
-              alert("Message Sent!");
-              contactForm.reset();
+            emailjs.send('service_q0580t8', 'template_cqjagih', contactInfo)
+                .then(() => {
+                alert("Message Sent!");
+                contactForm.reset();
             })
             .catch((error) => {
-              console.error("EmailJS send error:", error);
-              alert("Failed to send message. Please try again.");
+                console.error("EmailJS send error:", error);
+                alert("Failed to send message. Please try again.");
             });
         });
-      }
-      
+    }
 
     // Subscribe Form in Home page (only if it exists)
     if (subscribeForm) {
