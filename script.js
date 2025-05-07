@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCheckoutSummary();
     };
 
+    // this is for the icon in the navbar 
     const updateCartCount = () => {
         // Add check to make sure iconCartSpan exists before updating it
         if (iconCartSpan) {
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
     
+    // calculating the total of the amounts in the cart 
     const calculateCartTotal = () => {
         // Calculate total price of all items in cart
         let total = 0;
