@@ -54,7 +54,7 @@
   .nav-link{
     position: relative;
   }
-  .nav-link::after{
+  .nav-link::after, .nav-link.active::after{
     content: '';
     opacity: 0;
     transition: all 0.3s;
@@ -65,7 +65,7 @@
     bottom: 0;
     left: 0;
   }
-  .nav-link:hover::after{
+  .nav-link:hover::after,.nav-link.active::after{
     opacity: 1;
   }
   .company-name{
