@@ -411,13 +411,13 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem('name', name);
             localStorage.setItem('email', email);
             localStorage.setItem('description', description);
-            // create an object with the the information set in the local storage
+            // create an object with the the information with the getitems in the local storage
             const contactInfo = {
                 topic: localStorage.getItem('topic'),
                 name: localStorage.getItem('name'),
                 email: localStorage.getItem('email'),
                 description: localStorage.getItem('description')
-            }
+            };
 
             // display a message
             alert("Thanks for reaching out! We will get back to you as soon as possible.");
