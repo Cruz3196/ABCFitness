@@ -397,33 +397,43 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
- // Setting up the contact us form in the contact us page (only if it exists)
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Retrieve the data from the form
-            let name = document.getElementById('name').value;
-            let email = document.getElementById('email').value;
-            let description = document.getElementById('description').value;
-            let topic = document.getElementById('topic').value;
-            // storing the data in local storage
-            localStorage.setItem('topic', topic);
-            localStorage.setItem('name', name);
-            localStorage.setItem('email', email);
-            localStorage.setItem('description', description);
-            // create an object with the the information with the getitems in the local storage
-            const contactInfo = {
-                topic: localStorage.getItem('topic'),
-                name: localStorage.getItem('name'),
-                email: localStorage.getItem('email'),
-                description: localStorage.getItem('description')
-            };
-
-            // display a message
-            alert("Thanks for reaching out! We will get back to you as soon as possible.");
-        contactForm.reset();
-    });
-}
+          e.preventDefault();
+      
+          // Get form values
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const description = document.getElementById('description').value;
+          const topic = document.getElementById('topic').value;
+      
+          // Store locally if you want (optional)
+          localStorage.setItem('topic', topic);
+          localStorage.setItem('name', name);
+          localStorage.setItem('email', email);
+          localStorage.setItem('description', description);
+      
+          // Prepare EmailJS variables (these must match your template keys!)
+          const contactInfo = {
+            user_name: name,
+            user_email: email,
+            message: description,
+            topic: topic
+          };
+      
+          // Send email
+          emailjs.send('service_q0580t8', 'template_cqjagih', contactInfo)
+            .then(() => {
+              alert("Message Sent!");
+              contactForm.reset();
+            })
+            .catch((error) => {
+              console.error("EmailJS send error:", error);
+              alert("Failed to send message. Please try again.");
+            });
+        });
+      }
+      
 
     // Subscribe Form in Home page (only if it exists)
     if (subscribeForm) {
