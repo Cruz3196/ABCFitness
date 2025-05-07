@@ -466,4 +466,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById('subscribe-email').value = '';
         });
     }
+
+    // Get current path
+    const currentPath = window.location.pathname;
+
+    // Select all nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        // If the href matches the current path
+        if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+        }
+    });
 });
