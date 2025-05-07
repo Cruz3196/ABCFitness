@@ -51,9 +51,7 @@
     width: 100%;
     display: space-between;
   }
-  .nav-link:hover::after,.nav-link.active::after{
-    opacity: 1;
-  }
+
   .company-name{
     font-weight: 700;
     color: black;

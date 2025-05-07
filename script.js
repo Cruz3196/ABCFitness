@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let iconCartSpan = document.querySelector(".cart-count");
     let contactForm = document.getElementById("contact-form");
     let subscribeForm = document.getElementById("subscribe");
+    let navItem = document.querySelector(".nav-item"); // selecting the nav items in the navbar 
     // Checkout summary selectors
     let checkoutSummaryBox = document.querySelector(".checkout-summary-box");
     let temporaryAmountSpan = checkoutSummaryBox?.querySelector(".d-flex:nth-child(2) span:last-child");
@@ -156,6 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
             updateCheckoutSummary();
         }
     };
+
+    // Function for active state in the navbar
+    
     
     // === PRODUCT PAGE SPECIFIC FUNCTIONS ===
 
