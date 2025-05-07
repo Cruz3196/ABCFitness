@@ -358,18 +358,20 @@
           integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
           crossorigin="anonymous"
       ></script>
+
+      <!-- Custom JS -->
       <script src="script.js"></script>
 
       <!-- Script for Email Js  -->
       <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
       </script>
-      <script type="text/javascript">
-      (function(){
-          emailjs.init({
-            publicKey: "YOUR_PUBLIC_KEY",
-          });
-      })();
+        <script type="text/javascript">
+        (function(){
+            emailjs.init({
+              publicKey: "YOUR_PUBLIC_KEY",
+            });
+        })();
       </script>
     </body>
 </html>
