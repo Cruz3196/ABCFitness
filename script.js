@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const total = calculateCartTotal();
             
             cartItemCountSpan.textContent = itemCount;
-            temporaryAmountSpan.textContent = `₱${total}`;
-            totalAmountSpan.textContent = `₱${total}`;
+            temporaryAmountSpan.textContent = `$${total}`;
+            totalAmountSpan.textContent = `$${total}`;
         }
     };
 
@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // This is just a fallback, we now use event listeners instead
     };
     window.checkout = () => {
-        alert("Proceeding to checkout with total: ₱" + calculateCartTotal());
+        alert("Proceeding to checkout with total: $" + calculateCartTotal());
         clearCart();
     };
 
@@ -380,7 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         
         // Simple validation - in a real app, you'd do more validation
-        alert("Thank you for your purchase! Your order has been processed.\nTotal: ₱" + calculateCartTotal());
+        alert("Thank you for your purchase! Your order has been processed.\nTotal: $" + calculateCartTotal());
         clearCart();
         return false;
     };
