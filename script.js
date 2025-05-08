@@ -366,7 +366,6 @@ document.addEventListener("DOMContentLoaded", () => {
         addToCartHTML();
         updateCheckoutSummary();
         adjustCartSectionHeight();
-        alert("Cart cleared");
     };
 
     window.processPayment = function(e) {
