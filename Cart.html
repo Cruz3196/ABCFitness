@@ -111,7 +111,7 @@
                                 <h5 class="mb-4 fw-bold">Customer Information</h5>
                                 
                                 <!-- Customer Information Form -->
-                                <form>
+                                <form id="checkout-form">
                                     <div class="row mb-3">
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">First Name</label>
@@ -172,7 +172,8 @@
                                         </div>
                                     </div>
                                     
-                                    <button class="btn btn-primary w-100 mt-4" type="submit" onclick="processPayment()">COMPLETE PURCHASE</button>
+                                <!-- OPTIONAL BUTTON FOR CHECK OUT  -->
+                                    <!-- <button class="btn btn-primary w-100 mt-4" type="submit" onclick="processPayment()">COMPLETE PURCHASE</button> -->
                                 </form>
                             </div>
                         </div>
@@ -218,7 +219,7 @@
                                 
                                 <!-- Checkout button -->
                                 <button class="btn btn-success w-100 mt-3" onclick="checkout()">
-                                    Proceed to Checkout
+                                    Complete Order
                                 </button>
                             </div>
                         </div>
@@ -413,6 +414,19 @@
         crossorigin="anonymous"
     ></script>
     
+    <!-- Custom JS File  -->
     <script src="script.js" defer></script>
+
+    <!-- Script for Email Js  -->
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+        <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "MgrtFzHoKzgUGcog8",
+            });
+        })();
+    </script>
     </body>
 </html>

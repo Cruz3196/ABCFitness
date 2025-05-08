@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let iconCartSpan = document.querySelector(".cart-count");
     let contactForm = document.getElementById("contact-form");
     let subscribeForm = document.getElementById("subscribe");
-    let navItem = document.querySelector(".nav-item"); // selecting the nav items in the navbar 
+    let checkoutForm = document.getElementById("checkout-form"); 
     // Checkout summary selectors
     let checkoutSummaryBox = document.querySelector(".checkout-summary-box");
     let cartItemCountSpan = checkoutSummaryBox?.querySelector(".cart-item-count");
@@ -457,7 +457,37 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Failed to send message. Please try again.");
             });
         });
-    }
+    };
+
+    // Check out form email that use emailjs 
+        if (checkoutForm) {
+            checkoutForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+              // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const description = document.getElementById('description').value;
+                const topic = document.getElementById('topic').value;
+    
+              // Prepare EmailJS variables (these must match your template keys!)
+                const checkoutInfo = {
+                    user_name: name,
+                    user_email: email,
+                    message: description,
+                    topic: topic
+            };
+              // Send email
+                emailjs.send('service_q0580t8', 'template_pxd0giv', checkoutInfo)
+                    .then(() => {
+                    alert("Message Sent!");
+                    contactForm.reset();
+                })
+                .catch((error) => {
+                    console.error("EmailJS send error:", error);
+                    alert("Failed to send message. Please try again.");
+                });
+            });
+        }; 
 
     // Subscribe Form in Home page (only if it exists)
     if (subscribeForm) {
