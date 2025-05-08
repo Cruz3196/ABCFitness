@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let navItem = document.querySelector(".nav-item"); // selecting the nav items in the navbar 
     // Checkout summary selectors
     let checkoutSummaryBox = document.querySelector(".checkout-summary-box");
+    let cartItemCountSpan = checkoutSummaryBox?.querySelector(".cart-item-count");
     let temporaryAmountSpan = checkoutSummaryBox?.querySelector(".d-flex:nth-child(2) span:last-child");
     let totalAmountSpan = checkoutSummaryBox?.querySelector(".fw-bold span:last-child");
 
@@ -64,10 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const updateCheckoutSummary = () => {
         // Update the checkout summary with the new total
-        if (checkoutSummaryBox && temporaryAmountSpan && totalAmountSpan) {
+        if (checkoutSummaryBox && cartItemCountSpan && temporaryAmountSpan && totalAmountSpan) {
+            const itemCount = carts.reduce((sum, item) => sum + item.quantity, 0);
             const total = calculateCartTotal();
-            temporaryAmountSpan.textContent = `${total}`;
-            totalAmountSpan.textContent = `${total}`;
+            
+            cartItemCountSpan.textContent = itemCount;
+            temporaryAmountSpan.textContent = `₱${total}`;
+            totalAmountSpan.textContent = `₱${total}`;
         }
     };
 
@@ -352,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // This is just a fallback, we now use event listeners instead
     };
     window.checkout = () => {
-        alert("Proceeding to checkout with total: $" + calculateCartTotal());
+        alert("Proceeding to checkout with total: ₱" + calculateCartTotal());
         clearCart();
     };
 
@@ -363,6 +367,22 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCheckoutSummary();
         adjustCartSectionHeight();
         alert("Cart cleared");
+    };
+
+    window.processPayment = function(e) {
+        // Prevent default form submission
+        if (e) e.preventDefault();
+        
+        // Check if cart is empty
+        if (carts.length === 0) {
+            alert("Your cart is empty. Please add items before checkout.");
+            return false;
+        }
+        
+        // Simple validation - in a real app, you'd do more validation
+        alert("Thank you for your purchase! Your order has been processed.\nTotal: ₱" + calculateCartTotal());
+        clearCart();
+        return false;
     };
 
     // Init - Always load cart from session on every page

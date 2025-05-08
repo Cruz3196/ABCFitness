@@ -105,14 +105,14 @@
                             <button class="btn btn-outline-danger btn-sm" onclick="clearCart()">Clear Cart</button>
                         </div>
                         
-                        <!-- Checkout Form (Now on the left in the wider column) -->
+                        <!-- Checkout Form (Left column) -->
                         <div class="col-sm-12 col-md-12 col-lg-8 check-out-content">
                             <div class="checkout-form-box p-4 shadow rounded">
                                 <h5 class="mb-4 fw-bold">Customer Information</h5>
                                 
                                 <!-- Customer Information Form -->
                                 <form>
-                                    <div id="customer_name" row mb-3>
+                                    <div class="row mb-3">
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">First Name</label>
                                             <input type="text" class="form-control" required>
@@ -177,42 +177,50 @@
                             </div>
                         </div>
                         
-                        <!-- Cart Summary (Now on the right in the narrower column) -->
-                        <div class="col-sm-12 col-md-12 col-lg-4 cart-content">
-                            <!-- Cart Item -->
-                            <div class="card mb-3 p-3 cart-item shadow-sm rounded list listCart">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-md-3">
-                                        <img src="/assets/Client2_TeeShirt.png" class="img-fluid rounded" alt="Item">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5 class="fw-bold mb-1">
-                                            Branded T-Shirt
-                                        </h5>
-                                        <p class="mb-0">
-                                            <strong>Size:</strong> M
-                                        </p>
-                                        <p class="mb-0">
-                                            <strong>Color:</strong> Gray
-                                        </p>
-                                        <div class="mt-2">
-                                            <button class="btn btn-sm btn-outline-danger me-2" onclick="remove_from_cart()">
-                                                Remove
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-secondary">
-                                                Move to wish list
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 text-end">
-                                        <input 
-                                            type="number" class="form-control mb-2" value="1" 
-                                            min="1" 
-                                            style="max-width: 80px; margin-left: auto;">
+                        <!-- Right Column: Cart Items and Summary -->
+                        <div class="col-sm-12 col-md-12 col-lg-4">
+                            <!-- Cart items list -->
+                            <div class="cart-content mb-4">
+                                <!-- Cart items will be added here dynamically -->
+                            </div>
+                            
+                            <!-- Checkout Summary Box - Will be added here -->
+                            <div class="checkout-summary-box card p-4 shadow rounded mb-4">
+                                <h5 class="fw-bold mb-3">Order Summary</h5>
+                                
+                                <!-- Items count -->
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Items</span>
+                                    <span class="cart-item-count">0</span>
+                                </div>
+                                
+                                <!-- Temporary amount -->
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Amount</span>
+                                    <span>₱0.00</span>
+                                </div>
+                                
+                                <!-- Promo code section -->
+                                <div class="promo-code-section mb-3">
+                                    <div class="input-group mt-2">
+                                        <input type="text" class="form-control" placeholder="Promo Code">
+                                        <button class="btn btn-outline-primary" type="button">Apply</button>
                                     </div>
                                 </div>
+                                
+                                <hr>
+                                
+                                <!-- Total amount -->
+                                <div class="d-flex justify-content-between fw-bold">
+                                    <span>Total</span>
+                                    <span>₱0.00</span>
+                                </div>
+                                
+                                <!-- Checkout button -->
+                                <button class="btn btn-success w-100 mt-3" onclick="checkout()">
+                                    Proceed to Checkout
+                                </button>
                             </div>
-                            <!-- Repeat .cart-item for more items -->
                         </div>
                     </div>
                 </div>
