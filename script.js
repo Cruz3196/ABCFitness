@@ -614,12 +614,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
             
-            // Trigger form submission if the form exists and passes validation
-            if (checkoutForm) {
-                checkoutForm.dispatchEvent(new Event('submit'));
-            } else {
-                alert("Error: Checkout form not found");
-            }
+            // // Trigger form submission if the form exists and passes validation
+            // if (checkoutForm) {
+            //     checkoutForm.dispatchEvent(new Event('submit'));
+            // } else {
+            //     alert("Error: Checkout form not found");
+            // }
             });
         }
     
