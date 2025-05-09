@@ -460,13 +460,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Check out form email that use emailjs 
         if (checkoutForm) {
-            checkoutForm.addEventListener('submit', (e) => {
+            checkoutForm.addEventListener('cartSubmit', (e) => {
                 e.preventDefault();
               // Get form values
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
-                const description = document.getElementById('description').value;
-                const topic = document.getElementById('topic').value;
     
               // Prepare EmailJS variables (these must match your template keys!)
                 const checkoutInfo = {

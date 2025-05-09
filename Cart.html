@@ -112,7 +112,7 @@
                                 
                                 <!-- Customer Information Form -->
                                 <form id="checkout-form">
-                                    <div class="row mb-3">
+                                    <div class="row mb-3" id="customer-name">
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">First Name</label>
                                             <input type="text" class="form-control" id="first_name" name="first_name" required>
@@ -197,13 +197,13 @@
 
                                 <!-- Shipping amount  -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <span>Shipping</span>
+                                    <span id="shipping">Shipping</span>
                                     <span class="cart-item-count">0</span>
                                 </div>
                                 
                                 <!-- Temporary amount -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <span>Tax</span>
+                                    <span id="tax">Tax</span>
                                     <span>$0.00</span>
                                 </div>
                                 
@@ -224,7 +224,8 @@
                                 </div>
                                 
                                 <!-- Checkout button -->
-                                <button class="btn btn-success w-100 mt-3" onclick="checkout()">
+                                    <!-- optional to call function onclick="checkout()" -->
+                                <button type="cartSubmit" class="btn btn-success w-100 mt-3">
                                     Complete Order
                                 </button>
                             </div>
