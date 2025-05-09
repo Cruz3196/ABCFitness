@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
             iconCartSpan.textContent = total;
         }
     };
-    
-    // calculating the total of the amounts in the cart 
+
+    // Update the calculateCartTotal function to also update tax and final total
     const calculateCartTotal = () => {
         // Calculate total price of all items in cart
         let total = 0;
@@ -60,9 +60,42 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         });
-        return total.toFixed(2); // Format to 2 decimal places
+        
+        // Format to 2 decimal places
+        const subtotal = total.toFixed(2);
+        
+        // If we're on the checkout page, update tax and total
+        if (document.getElementById('tax-amount') && document.getElementById('shipping-cost') && document.getElementById('order-total')) {
+            // Calculate tax (8% for example)
+            const tax = (total * 0.08).toFixed(2);
+            
+            // Fixed shipping for now
+            const shipping = 5.00;
+            
+            // Calculate final total
+            const finalTotal = (parseFloat(subtotal) + parseFloat(tax) + shipping).toFixed(2);
+            
+            // Update the elements
+            document.getElementById('tax-amount').textContent = `$${tax}`;
+            document.getElementById('shipping-cost').textContent = `$${shipping.toFixed(2)}`;
+            document.getElementById('order-total').textContent = `$${finalTotal}`;
+            
+            // Also update hidden fields for EmailJS
+            if (document.getElementById('order_tax')) {
+                document.getElementById('order_tax').value = tax;
+            }
+            if (document.getElementById('order_shipping')) {
+                document.getElementById('order_shipping').value = shipping.toFixed(2);
+            }
+            if (document.getElementById('order_subtotal')) {
+                document.getElementById('order_subtotal').value = subtotal;
+            }
+        }
+        
+        return subtotal;
     };
-    
+
+    // Update the updateCheckoutSummary function
     const updateCheckoutSummary = () => {
         // Update the checkout summary with the new total
         if (checkoutSummaryBox && cartItemCountSpan && temporaryAmountSpan && totalAmountSpan) {
@@ -72,6 +105,26 @@ document.addEventListener("DOMContentLoaded", () => {
             cartItemCountSpan.textContent = itemCount;
             temporaryAmountSpan.textContent = `$${total}`;
             totalAmountSpan.textContent = `$${total}`;
+            
+            // Update order items summary for EmailJS
+            if (document.getElementById('order_items_summary')) {
+                let itemsSummary = "";
+                carts.forEach(cart => {
+                    const product = listProducts.find(p => p.id == cart.product_id);
+                    if (product) {
+                        itemsSummary += `${product.name} x ${cart.quantity}, `;
+                    }
+                });
+                
+                // Remove trailing comma
+                itemsSummary = itemsSummary.replace(/, $/, '');
+                document.getElementById('order_items_summary').value = itemsSummary;
+            }
+            
+            // Generate a simple order number
+            if (document.getElementById('order_number')) {
+                document.getElementById('order_number').value = `ORD-${Date.now().toString().substring(6)}`;
+            }
         }
     };
 
@@ -244,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <img src="${product.image}" class="img-fluid rounded" alt="Item">
                         </div>
                         <div class="col-md-6">
-                            <h5 class="fw-bold mb-1">${product.name}</h5>
+                            <h5 id="productName" class="fw-bold mb-1">${product.name}</h5>
                             <p class="mb-0"><strong>Size:</strong> M</p>
                             <p class="mb-0"><strong>Color:</strong> Gray</p>
                             <div class="mt-2">
@@ -253,11 +306,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             </div>
                         </div>
                         <div class="col-md-3 text-end">
-                            <input type="number" class="form-control mb-2 quantity-input" 
+                            <input id="productquantity" type="number" class="form-control mb-2 quantity-input" 
                                     data-product-id="${product.id}"
                                     value="${cart.quantity}" min="1" 
                                     style="max-width: 80px; margin-left: auto;">
-                            <p class="mb-0"><strong>${product.price}</strong></p>
+                            <p id="productPrice" class="mb-0"><strong>${product.price}</strong></p>
                         </div>
                     </div>
                 `;
@@ -458,33 +511,127 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // Check out form email that use emailjs 
-        if (checkoutForm) {
-            checkoutForm.addEventListener('cartSubmit', (e) => {
-                e.preventDefault();
-              // Get form values
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-    
-              // Prepare EmailJS variables (these must match your template keys!)
-                const checkoutInfo = {
-                    user_name: name,
-                    user_email: email,
-                    message: description,
-                    topic: topic
-            };
-              // Send email
-                emailjs.send('service_q0580t8', 'template_pxd0giv', checkoutInfo)
-                    .then(() => {
-                    alert("Message Sent!");
-                    contactForm.reset();
-                })
-                .catch((error) => {
-                    console.error("EmailJS send error:", error);
-                    alert("Failed to send message. Please try again.");
-                });
+    // Update the checkout form handler
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Check if cart is empty
+        if (carts.length === 0) {
+            alert("Your cart is empty. Please add items before checkout.");
+            return false;
+        }
+        
+        // Get customer information
+        const firstName = document.getElementById('first_name').value;
+        const lastName = document.getElementById('last_name').value;
+        const email = document.getElementById('email').value;
+        
+        // Verify email is not empty
+        if (!email || email.trim() === '') {
+            alert("Please enter a valid email address");
+            return false;
+        }
+        
+        const address = document.getElementById('address').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        const zip = document.getElementById('zip').value;
+        
+        // Calculate cart totals
+        const total = calculateCartTotal();
+        const tax = (parseFloat(total) * 0.08).toFixed(2); // Example tax calculation (8%)
+        const shipping = "5.00"; // Example fixed shipping cost
+        const finalTotal = (parseFloat(total) + parseFloat(tax) + parseFloat(shipping)).toFixed(2);
+        
+        // Create a summary of items in cart
+        let itemsSummary = "";
+        carts.forEach(cart => {
+            const product = listProducts.find(p => p.id == cart.product_id);
+            if (product) {
+            itemsSummary += `${product.name} x ${cart.quantity}, `;
+            }
+        });
+        
+        // Remove trailing comma
+        itemsSummary = itemsSummary.replace(/, $/, '');
+        
+        // Prepare EmailJS template parameters
+        const emailParams = {
+            to_email: email,
+            to_name: `${firstName} ${lastName}`,
+            order_number: `ORD-${Date.now().toString().substring(6)}`, // Generate a simple order number
+            order_items: itemsSummary,
+            order_subtotal: `$${total}`,
+            order_tax: `$${tax}`,
+            order_shipping: `$${shipping}`,
+            order_total: `$${finalTotal}`,
+            shipping_address: `${address}, ${city}, ${state} ${zip}`
+        };
+        
+        console.log("Sending email with params:", emailParams); // Debug log
+        
+        // Send email using EmailJS
+        emailjs.send('service_q0580t8', 'template_wp9t0ve', emailParams)
+            .then((response) => {
+            console.log("Email sent successfully:", response);
+            alert("Order confirmed! Check your email for order details.");
+            window.clearCart(); // Clear the cart after successful order
+            checkoutForm.reset();
+            })
+            .catch((error) => {
+            console.error("EmailJS send error:", error);
+            alert("Failed to process your order. Error: " + error.text);
             });
-        }; 
+        });
+    }
+
+  // Update the Complete Order button to submit the form
+    const completeOrderButton = document.querySelector('.checkout-summary-box .btn-success');
+        if (completeOrderButton) {
+            completeOrderButton.addEventListener('click', () => {
+            // Validate form fields first
+            const email = document.getElementById('email');
+            const firstName = document.getElementById('first_name');
+            const lastName = document.getElementById('last_name');
+            
+            // Basic validation
+            if (!email || !email.value || email.value.trim() === '') {
+                alert("Please enter your email address");
+                email.focus();
+                return;
+            }
+            
+            if (!firstName || !firstName.value || firstName.value.trim() === '') {
+                alert("Please enter your first name");
+                firstName.focus();
+                return;
+            }
+            
+            if (!lastName || !lastName.value || lastName.value.trim() === '') {
+                alert("Please enter your last name");
+                lastName.focus();
+                return;
+            }
+            
+            // Trigger form submission if the form exists and passes validation
+            if (checkoutForm) {
+                checkoutForm.dispatchEvent(new Event('submit'));
+            } else {
+                alert("Error: Checkout form not found");
+            }
+            });
+        }
+    
+    // Update the Complete Order button to submit the form
+    document.querySelector('.checkout-summary-box .btn-success').addEventListener('click', () => {
+        // Trigger form submission if the form exists
+        if (checkoutForm) {
+            checkoutForm.dispatchEvent(new Event('submit'));
+        } else {
+            alert("Error: Checkout form not found");
+        }
+    });
 
     // Subscribe Form in Home page (only if it exists)
     if (subscribeForm) {

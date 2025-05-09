@@ -124,7 +124,7 @@
                                     </div>
                                     
                                     <div class="mb-3">
-                                        <label class="form-label">Email</label>
+                                        <label id="customer-email" class="form-label">Email</label>
                                         <input type="email" class="form-control" id="email" name="email" required>
                                     </div>
                                     
@@ -184,27 +184,26 @@
                             <div class="cart-content mb-4">
                                 <!-- Cart items will be added here dynamically -->
                             </div>
-                            
-                            <!-- Checkout Summary Box - Will be added here -->
+                            <!-- Update the Order Summary Box with correct IDs -->
                             <div class="checkout-summary-box card p-4 shadow rounded mb-4">
                                 <h5 class="fw-bold mb-3">Order Summary</h5>
                                 
                                 <!-- Items count -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <span>Amount</span>
+                                    <span>Items</span>
                                     <span class="cart-item-count">0</span>
                                 </div>
 
                                 <!-- Shipping amount  -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <span id="shipping">Shipping</span>
-                                    <span class="cart-item-count">0</span>
+                                    <span>Shipping</span>
+                                    <span id="shipping-cost">$5.00</span>
                                 </div>
                                 
-                                <!-- Temporary amount -->
+                                <!-- Tax amount -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <span id="tax">Tax</span>
-                                    <span>$0.00</span>
+                                    <span>Tax</span>
+                                    <span id="tax-amount">$0.00</span>
                                 </div>
                                 
                                 <!-- Promo code section -->
@@ -220,14 +219,22 @@
                                 <!-- Total amount -->
                                 <div class="d-flex justify-content-between fw-bold">
                                     <span>Total</span>
-                                    <span>$0.00</span>
+                                    <span id="order-total">$0.00</span>
                                 </div>
                                 
                                 <!-- Checkout button -->
-                                    <!-- optional to call function onclick="checkout()" -->
-                                <button type="cartSubmit" class="btn btn-success w-100 mt-3">
+                                <button type="button" class="btn btn-success w-100 mt-3">
                                     Complete Order
                                 </button>
+                            </div>
+
+                            <!-- Hidden fields to store order information for EmailJS -->
+                            <div style="display: none;">
+                                <input type="hidden" id="order_items_summary" value="">
+                                <input type="hidden" id="order_subtotal" value="">
+                                <input type="hidden" id="order_tax" value="">
+                                <input type="hidden" id="order_shipping" value="">
+                                <input type="hidden" id="order_number" value="">
                             </div>
                         </div>
                     </div>
