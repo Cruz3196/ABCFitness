@@ -493,11 +493,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
           // Prepare EmailJS variables (these must match your template keys!)
             const contactInfo = {
-                user_name: name,
-                user_email: email,
-                message: description,
-                topic: topic
-        };
+                topic: localStorage.getItem('topic'),
+                name: localStorage.getItem('name'),
+                email: localStorage.getItem('email'),
+                description: localStorage.getItem('description')
+            };
+        
           // Send email
             emailjs.send('service_q0580t8', 'template_cqjagih', contactInfo)
                 .then(() => {
