@@ -543,6 +543,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const tax = (parseFloat(total) * 0.08).toFixed(2); // Example tax calculation (8%)
         const shipping = "5.00"; // Example fixed shipping cost
         const finalTotal = (parseFloat(total) + parseFloat(tax) + parseFloat(shipping)).toFixed(2);
+
+        // setting the information to the localstorage to be used in the receipt page
+        localStorage.setItem('firstName', firstName);
+        localStorage.setItem('lastName', lastName);
+        localStorage.setItem('email', email);
+        localStorage.setItem('address', address);
+        localStorage.setItem('city', city);
+        localStorage.setItem('state', state);
+        localStorage.setItem('zip', zip);
+        localStorage.setItem('total', total);
+        localStorage.setItem('tax', tax);
+        localStorage.setItem('shipping', shipping);
+        localStorage.setItem('finalTotal', finalTotal);
         
         // Create a summary of items in cart
         let itemsSummary = "";
