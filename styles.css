@@ -514,9 +514,6 @@
     text-transform: capitalize;
   }
   
-  .story-text {
-    line-height: 2.5;
-  }
   
   /* Mission Section  */
   
@@ -538,10 +535,6 @@
     font-size: 3rem;
     font-weight: 700;
     text-transform: capitalize;
-  }
-  
-  .mission-text {
-    line-height: 2.5;
   }
   
   .image-mission {
@@ -923,7 +916,7 @@
       justify-content: center;
       margin-top: 20px;
     }
-  }
+  
 
     /* classes Section  */
     .Card-Title h1{
@@ -945,6 +938,12 @@
       max-width: 100%;
       height: auto;
       padding: 30px;
+    }
+    .story-text {
+      line-height: 2.0;
+    }
+    .mission-text{
+      line-height: 2.0;
     }
     .image-mission {
       max-width: 100%;
@@ -969,6 +968,7 @@
       height: 20px;
       margin-right: 6px;
     }
+  }
   
   @media (min-width: 769px) {
     /* Navbar Title  */
@@ -1040,6 +1040,12 @@
       max-width: 100%;
       height: auto;
       padding: 70px;
+    }
+    .story-text {
+      line-height: 2.0;
+    }
+    .mission-text{
+      line-height: 2.0;
     }
     /* Gym Section Rating  */
     .gym-rating-section {
@@ -1188,6 +1194,12 @@
     /* Testimonial about section  */
     .about-testimonials {
       height: 840px;
+    }
+    .story-text {
+      line-height: 2.2;
+    }
+    .mission-text{
+      line-height: 2.2;
     }
     .about-testimonials-cards {
       display: flex;
