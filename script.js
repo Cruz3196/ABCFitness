@@ -572,16 +572,17 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // Prepare EmailJS template parameters
         const emailParams = {
-            to_email: email,
-            to_name: `${firstName} ${lastName}`,
-            order_number: `ORD-${Date.now().toString().substring(6)}`, // Generate a simple order number
-            order_items: itemsSummary,
-            order_subtotal: `$${total}`,
-            order_tax: `$${tax}`,
-            order_shipping: `$${shipping}`,
-            order_total: `$${finalTotal}`,
-            shipping_address: `${address}, ${city}, ${state} ${zip}`
+            to_email: localStorage.getItem('email'),
+            to_name: `${localStorage.getItem('firstName')} ${localStorage.getItem('lastName')}`,
+            order_number: `ORD-${Date.now().toString().substring(6)}`,
+            order_items: localStorage.getItem('itemsSummary'),
+            order_subtotal: `$${localStorage.getItem('total')}`,
+            order_tax: `$${localStorage.getItem('tax')}`,
+            order_shipping: `$${localStorage.getItem('shipping')}`,
+            order_total: `$${localStorage.getItem('finalTotal')}`,
+            shipping_address: `${localStorage.getItem('address')}, ${localStorage.getItem('city')}, ${localStorage.getItem('state')} ${localStorage.getItem('zip')}`
         };
+        
         
         console.log("Sending email with params:", emailParams); // Debug log
         
