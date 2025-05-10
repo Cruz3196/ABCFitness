@@ -55,6 +55,11 @@
     width: 100%;
   }
 
+  .logo-img{
+    width: 60px;
+    height: 60px;
+  }
+
   .company-name{
     font-weight: 700;
     color: black;
@@ -859,6 +864,10 @@
       font-weight: 700;
       color: black;
     }
+    .logo-img{
+      width: 40px;
+      height: 40px;
+    }
       /* Hero Section  */
     .hero-section {
       display: flex;
@@ -962,6 +971,10 @@
       font-size: 2.5rem;
       font-weight: 700;
       color: black;
+    }
+    .logo-img{
+      width: 40px;
+      height: 40px;
     }
     /* Hero Section  */
     .hero-section {
@@ -1067,6 +1080,10 @@
       font-size: 3rem;
       font-weight: 700;
       color: black;
+    }
+    .logo-img{
+      width: 60px;
+      height: 60px;
     }
     /* Hero Section  */
     .hero-section {
