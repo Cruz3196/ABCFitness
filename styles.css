@@ -306,7 +306,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--willow-gray);
+  color: var(--color-black);
   font-weight: 500;
   font-size: 0.9rem;
 }
