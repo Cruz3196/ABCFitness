@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let listCartHTML = document.querySelector(".cart-content");
     let iconCartSpan = document.querySelector(".cart-count");
     let contactForm = document.getElementById("contact-form");
-    let subscribeForm = document.getElementById("subscribe");
+    // let subscribeForm = document.getElementById("subscribe");
     let checkoutForm = document.getElementById("checkout-form"); 
     // Checkout summary selectors
     let checkoutSummaryBox = document.querySelector(".checkout-summary-box");
@@ -649,18 +649,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Subscribe Form in Home page (only if it exists)
-    if (subscribeForm) {
-        subscribeForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Retrieve the data from the form
-            let email = document.getElementById('subscribe-email').value;
-            // storing the data in local storage
-            localStorage.setItem('subscribe-email', email);
-            // display a message
-            alert("Thanks for subscribing!");
-            subscribeForm.reset();
-        });
-    }
+    // if (subscribeForm) {
+    //     subscribeForm.addEventListener('submit', (e) => {
+    //         e.preventDefault();
+    //         // Retrieve the data from the form
+    //         let email = document.getElementById('subscribe-email').value;
+    //         // storing the data in local storage
+    //         localStorage.setItem('subscribe-email', email);
+    //         // display a message
+    //         alert("Thanks for subscribing!");
+    //         subscribeForm.reset();
+    //     });
+    // }
 
     // Alternative approach for subscribe button (if you're using button instead of form)
     const subscribeButton = document.getElementById('subscribe');
