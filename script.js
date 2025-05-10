@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let listCartHTML = document.querySelector(".cart-content");
     let iconCartSpan = document.querySelector(".cart-count");
     let contactForm = document.getElementById("contact-form");
-    // let subscribeForm = document.getElementById("subscribe");
+    let subscribeForm = document.getElementById("subscribe-Form");
     let checkoutForm = document.getElementById("checkout-form"); 
     // Checkout summary selectors
     let checkoutSummaryBox = document.querySelector(".checkout-summary-box");
@@ -649,34 +649,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Subscribe Form in Home page (only if it exists)
-    // if (subscribeForm) {
-    //     subscribeForm.addEventListener('submit', (e) => {
-    //         e.preventDefault();
-    //         // Retrieve the data from the form
-    //         let email = document.getElementById('subscribe-email').value;
-    //         // storing the data in local storage
-    //         localStorage.setItem('subscribe-email', email);
-    //         // display a message
-    //         alert("Thanks for subscribing!");
-    //         subscribeForm.reset();
-    //     });
-    // }
-
-    // Alternative approach for subscribe button (if you're using button instead of form)
-    const subscribeButton = document.getElementById('subscribe');
-        if (subscribeButton) {
-            subscribeButton.addEventListener('click', (e) => {
+    if (subscribeForm) {
+            subscribeForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                // Retrieve the data
-                let email = document.getElementById('subscribe-email').value;
-                // Store the data
-                localStorage.setItem('subscribe-email', email);
-                // Display a message
+        //         // Retrieve the data from the form
+                let subscribe_email = document.getElementById('subscribe-email').value;
+        //         // storing the data in local storage
+                localStorage.setItem('subscribe-email', subscribe_email);
+        //         // display a message
                 alert("Thanks for subscribing!");
-                // Clear the field
-                document.getElementById('subscribe-email').value = '';
-        });
-    }
+                subscribeForm.reset();
+            });
+        };
+
 
     // Get current path
     const currentPath = window.location.pathname;
