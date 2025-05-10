@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
         listProductHTML.innerHTML = '';
         listProducts.forEach(product => {
             const newProduct = document.createElement('div');
-            newProduct.classList.add('col-6', 'col-md-6', 'col-lg-4', 'product-card');
+            newProduct.classList.add('col-12', 'col-md-6', 'col-lg-4', 'product-card');
             newProduct.dataset.id = product.id;
             newProduct.innerHTML = `
                 <div class="card h-100">
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
         serviceListHTML.innerHTML = '';
         serviceList.forEach(service => {
             const newService = document.createElement('div');
-            newService.classList.add('col-6', 'col-md-6', 'col-lg-4', 'service-card');
+            newService.classList.add('col-12', 'col-md-6', 'col-lg-4', 'service-card');
             newService.dataset.id = service.id;
             newService.innerHTML = `
                 <div class="card h-100">
