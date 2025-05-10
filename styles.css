@@ -260,7 +260,7 @@ nav {
 .hero-subtitle {
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--willow-gray);
+  color: var(--color-black);
   margin-bottom: 25px;
 }
 
@@ -833,7 +833,7 @@ nav {
   text-align: center;
   padding-top: 20px;
   font-weight: 200;
-  color: var(--willow-gray);
+  color: var(--color-black);
 }
 
 /* Add this to ensure the section grows with content */
@@ -859,7 +859,7 @@ nav {
 .contact-subtitle {
   padding-top: 20px;
   font-weight: 200;
-  color: var(--willow-gray);
+  color: var(--color-black);
 }
 
 .contact-form-section {
@@ -1071,12 +1071,12 @@ nav {
   
   .story-text {
     line-height: 2.0;
-    color: var(--willow-gray);
+    color: var(--barbell-black);
   }
   
   .mission-text {
     line-height: 2.0;
-    color: var(--willow-gray);
+    color: var(--barbell-black);
   }
   
   .image-mission {
@@ -1281,7 +1281,7 @@ nav {
       font-family: var(--font-subtitle);
       font-size: 1.05rem;
       margin-bottom: 30px;
-      color: var(--color-gray);
+      color: var(--color-black);
     }
     
     .hero-image-content {
@@ -1431,7 +1431,7 @@ nav {
       justify-content: center;
       text-align: center;
       font-family: var(--font-subtitle);
-      color: var(--color-gray);
+      color: var(--color-black);
     }
     
     /* Contact Section */
@@ -1445,7 +1445,7 @@ nav {
       padding-top: 20px;
       font-weight: 200;
       font-family: var(--font-subtitle);
-      color: var(--color-gray);
+      color: var(--color-black);
     }
     
     .contact-form-section {
