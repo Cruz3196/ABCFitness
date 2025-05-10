@@ -273,6 +273,10 @@
     width: 100%;
     overflow: hidden;
   }
+
+  .product-card{
+    padding:10px
+  }
   
   .Card-Title-Container {
     height: 50px;
