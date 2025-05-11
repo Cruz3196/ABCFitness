@@ -1240,7 +1240,7 @@ nav {
     min-height: 70vh;
     padding: 4rem 0;
   }
-  
+}
   @media (min-width: 992px) {
     /* Navbar Title */
     .company-name {
