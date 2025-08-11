@@ -612,7 +612,6 @@ document.addEventListener("DOMContentLoaded", () => {
             
             // Basic validation
             if (!email || !email.value || email.value.trim() === '') {
-                alert("Please enter your email address");
                 email.focus();
                 return;
             }

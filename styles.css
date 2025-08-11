@@ -666,7 +666,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  width: auto;
 }
 
 .gym-ratings {
@@ -1000,11 +1000,11 @@ nav {
     justify-content: center;
     align-items: center;
     height: auto;
-    padding: 30px 0;
+    padding: 30px 20px;
   }
 
   .hero-container {
-    height: 85vh;
+    height: auto;
   }
 
   .hero-content {
@@ -1083,6 +1083,13 @@ nav {
     max-width: 100%;
     height: auto;
     padding: 30px;
+  }
+  .gym-rating-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 30px;
   }
 
   /* Cart Page  */
@@ -1245,7 +1252,7 @@ nav {
     /* Navbar Title */
     .company-name {
       font-family: var(--font-title-large);
-      font-size: 3rem;
+      font-size: 1.8rem;
       font-weight: 700;
       color: var(--color-black);
     }
